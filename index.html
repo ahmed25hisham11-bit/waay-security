@@ -1,0 +1,5227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>وعي | Waay – خط الدفاع البشري الأول لشركتك في مصر</title>
+  <meta name="description"
+    content="جلسات تفاعلية للأمن السيبراني والتوعية بالاحتيال الإلكتروني لموظفي الشركات غير التقنيين في مصر. سيناريوهات واقعية، قياس قبل وبعد، وتقرير تنفيذي للإدارة.">
+  <meta name="keywords"
+    content="أمن سيبراني مصر, توعية موظفين, احتيال إلكتروني, تصيد الكتروني, انستاباي, قانون حماية البيانات 151 لسنة 2020">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="logo-emblem.png">
+
+  <style>
+    /* ───────────────────────────────────────────────────────────
+   DESIGN TOKENS & SYSTEM
+─────────────────────────────────────────────────────────── */
+    :root {
+      --font-main: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color-scheme: light dark;
+
+      /* Palette - Light Theme */
+      --bg-page: #F7F8FA;
+      --bg-subtle: #EEF1F6;
+      --surface: #FFFFFF;
+      --surface-alt: #F3F6F9;
+      --ink-primary: #0B192C;
+      --ink-secondary: #394B61;
+      --ink-muted: #62748D;
+      --border-light: #E2E8F0;
+      --border-strong: #CBD5E1;
+
+      /* Brand Colors - Egyptian Modern Cybersecurity Vibe */
+      --primary: #0A6E63;
+      --primary-hover: #07574E;
+      --primary-light: #E7F6F4;
+      --primary-ink: #FFFFFF;
+
+      --accent: #E8590C;
+      --accent-light: #FFF3EB;
+      --accent-hover: #CF4D07;
+
+      --danger: #DC2626;
+      --danger-light: #FEE2E2;
+      --success: #059669;
+      --success-light: #D1FAE5;
+      --warning: #D97706;
+      --warning-light: #FEF3C7;
+
+      --wa-green: #25D366;
+      --wa-dark: #128C7E;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+
+      --shadow-sm: 0 2px 8px rgba(11, 25, 44, 0.04);
+      --shadow-md: 0 8px 24px rgba(11, 25, 44, 0.08);
+      --shadow-lg: 0 16px 40px rgba(10, 110, 99, 0.12);
+      --shadow-glow: 0 0 35px rgba(10, 110, 99, 0.22);
+
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Dark Theme Palette */
+    [data-theme="dark"] {
+      --bg-page: #090F17;
+      --bg-subtle: #0F1926;
+      --surface: #131F30;
+      --surface-alt: #19283E;
+      --ink-primary: #F1F5F9;
+      --ink-secondary: #CBD5E1;
+      --ink-muted: #8798AF;
+      --border-light: #1E314B;
+      --border-strong: #2D4464;
+
+      --primary: #2DD4BF;
+      --primary-hover: #14B8A6;
+      --primary-light: #0A2D2A;
+      --primary-ink: #042F2E;
+
+      --accent: #FB923C;
+      --accent-light: #3D1E0C;
+
+      --danger: #F87171;
+      --danger-light: #371313;
+      --success: #34D399;
+      --success-light: #063124;
+      --warning: #FBBF24;
+      --warning-light: #362506;
+
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+      --shadow-glow: 0 0 40px rgba(45, 212, 191, 0.15);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   BASE & RESET
+─────────────────────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg-page);
+      color: var(--ink-primary);
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   TYPOGRAPHY & UTILITIES
+─────────────────────────────────────────────────────────── */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      border: 1px solid rgba(10, 110, 99, 0.15);
+    }
+
+    .section-badge .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 52px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      color: var(--ink-primary);
+    }
+
+    .section-header p {
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   BUTTONS
+─────────────────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 24px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--primary-ink);
+      box-shadow: 0 4px 14px rgba(10, 110, 99, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(10, 110, 99, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--ink-primary);
+      border-color: var(--border-strong);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp:hover {
+      background: #20BA5A;
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    .btn-lg {
+      padding: 15px 32px;
+      font-size: 1.1rem;
+      border-radius: var(--radius-md);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   NAVBAR
+─────────────────────────────────────────────────────────── */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+
+    [data-theme="dark"] .navbar {
+      background: rgba(19, 31, 48, 0.85);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #0B192C 0%, #0F2A4A 100%);
+      border: 1px solid rgba(0, 180, 216, 0.4);
+      box-shadow: 0 4px 14px rgba(0, 180, 216, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      transition: var(--transition);
+      flex-shrink: 0;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+    .brand-icon img,
+    .brand-logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 6px rgba(0, 210, 255, 0.45));
+      transition: transform 0.25s ease, filter 0.25s ease;
+      display: block;
+    }
+
+    .brand-icon:hover {
+      box-shadow: 0 6px 20px rgba(0, 180, 216, 0.38);
+      transform: translateY(-1px);
+    }
+
+    .brand-icon:hover img,
+    .brand-icon:hover .brand-logo-img {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.75));
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--ink-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .brand-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #0284C7;
+      letter-spacing: 1px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-secondary);
+      transition: color 0.2s;
+      padding: 6px 0;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .theme-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      color: var(--ink-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .lang-btn {
+      height: 40px;
+      padding: 0 12px;
+      border-radius: var(--radius-sm);
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      color: var(--ink-secondary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--ink-primary);
+      cursor: pointer;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   HERO SECTION
+─────────────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      padding: 70px 0 90px;
+      overflow: hidden;
+    }
+
+    .hero-bg-accent {
+      position: absolute;
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(10, 110, 99, 0.12) 0%, rgba(232, 89, 12, 0.05) 45%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 22px;
+      color: var(--ink-primary);
+    }
+
+    .hero-content h1 span.highlight {
+      color: var(--primary);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-content h1 span.warning-text {
+      color: var(--accent);
+    }
+
+    .hero-lead {
+      font-size: 1.18rem;
+      color: var(--ink-secondary);
+      line-height: 1.75;
+      margin-bottom: 34px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .trust-badge svg {
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   INTERACTIVE SIMULATOR (HERO RIGHT)
+─────────────────────────────────────────────────────────── */
+    .sim-container {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .sim-header {
+      padding: 14px 18px;
+      background: var(--surface-alt);
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .sim-pill-group {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 0;
+    }
+
+    .sim-pill-group::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sim-pill {
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--ink-muted);
+      transition: var(--transition);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .sim-pill.active {
+      background: var(--primary);
+      color: var(--primary-ink);
+      box-shadow: 0 2px 6px rgba(10, 110, 99, 0.2);
+    }
+
+    .sim-badge {
+      font-size: 0.74rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .sim-body {
+      padding: 20px;
+    }
+
+    .sim-device-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed var(--border-light);
+      margin-bottom: 16px;
+    }
+
+    .sim-device-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .sim-avatar {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .sim-online-dot {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #25D366;
+      border: 2px solid var(--surface);
+    }
+
+    .sim-sender-info {
+      min-width: 0;
+    }
+
+    .sim-sender-info h4 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sim-sender-info p {
+      font-size: 0.78rem;
+      color: var(--danger);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sim-device-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary);
+      opacity: 0.8;
+      flex-shrink: 0;
+    }
+
+    .sim-device-actions svg {
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sim-device-actions svg:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    /* Container for Simulated Messages */
+    .sim-message-box {
+      border-radius: var(--radius-md);
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+
+    .sim-message-box.sim-is-wa {
+      background: #EFEAE2;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+      background-size: 16px 16px;
+      border: 1px solid #DFE5E7;
+      padding: 12px;
+      max-height: 380px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    [data-theme="dark"] .sim-message-box.sim-is-wa {
+      background: #0B141A;
+      background-image:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      border-color: #1F2C34;
+    }
+
+    .sim-message-box.sim-is-wa::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .sim-message-box.sim-is-wa::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+    [data-theme="dark"] .sim-message-box.sim-is-wa::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* WhatsApp Flow Components */
+    .wa-chat-date {
+      align-self: center;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+      color: #54656F;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 6px;
+      box-shadow: 0 1px 1px rgba(11, 20, 26, 0.08);
+      margin: 2px 0;
+    }
+
+    [data-theme="dark"] .wa-chat-date {
+      background: #182229;
+      color: #8696A0;
+    }
+
+    .wa-security-banner {
+      align-self: center;
+      background: #FFF9C4;
+      color: #795548;
+      font-size: 0.74rem;
+      line-height: 1.4;
+      padding: 6px 12px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #FFF59D;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: 95%;
+    }
+
+    [data-theme="dark"] .wa-security-banner {
+      background: #252818;
+      color: #E2D99C;
+      border-color: #383A22;
+    }
+
+    .wa-row {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .wa-row.incoming {
+      align-items: flex-start;
+    }
+
+    .wa-row.outgoing {
+      align-items: flex-end;
+    }
+
+    .wa-bubble {
+      position: relative;
+      max-width: 86%;
+      padding: 9px 13px 7px 13px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      box-shadow: 0 1px 1.5px rgba(11, 20, 26, 0.12);
+      word-wrap: break-word;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .wa-row.incoming .wa-bubble {
+      background: #FFFFFF;
+      color: #111B21;
+      border-top-right-radius: 2px;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="dark"] .wa-row.incoming .wa-bubble {
+      background: #202C33;
+      color: #E9EDEF;
+      border-color: rgba(255, 255, 255, 0.04);
+    }
+
+    .wa-row.incoming .wa-bubble.urgent {
+      border-right: 4px solid #DC2626;
+      background: #FFFAFA;
+    }
+
+    [data-theme="dark"] .wa-row.incoming .wa-bubble.urgent {
+      background: #272124;
+      border-right-color: #EF4444;
+    }
+
+    .wa-row.outgoing .wa-bubble {
+      background: #D9FDD3;
+      color: #111B21;
+      border-top-left-radius: 2px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    [data-theme="dark"] .wa-row.outgoing .wa-bubble {
+      background: #005C4B;
+      color: #E9EDEF;
+      border-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .wa-bubble-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+    }
+
+    .wa-badge-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .wa-badge-pill {
+      background: rgba(45, 212, 191, 0.15);
+      color: var(--primary);
+    }
+
+    .wa-badge-pill.danger {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    [data-theme="dark"] .wa-badge-pill.danger {
+      background: #371313;
+      color: #F87171;
+    }
+
+    .wa-tactic-tag {
+      font-size: 0.67rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .wa-tactic-tag.danger {
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .wa-bubble-label.outgoing-label span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      opacity: 0.9;
+    }
+
+    [data-theme="dark"] .wa-bubble-label.outgoing-label span {
+      color: #53BDEB;
+    }
+
+    .wa-bubble p {
+      margin: 0;
+      color: inherit;
+    }
+
+    .wa-bubble strong.highlight-money {
+      background: rgba(232, 89, 12, 0.14);
+      color: #C2410C;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+    [data-theme="dark"] .wa-bubble strong.highlight-money {
+      background: rgba(251, 146, 60, 0.2);
+      color: #FDBA74;
+    }
+
+    .wa-bubble span.highlight-urgency {
+      color: #DC2626;
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    [data-theme="dark"] .wa-bubble span.highlight-urgency {
+      color: #F87171;
+    }
+
+    .wa-bubble-footer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      margin-top: 4px;
+      font-size: 0.68rem;
+      color: #667781;
+    }
+
+    [data-theme="dark"] .wa-bubble-footer {
+      color: #8696A0;
+    }
+
+    .wa-checks {
+      color: #53BDEB;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    /* Email & SMS Box Styles for Other Scenarios */
+    .sim-message-box.sim-is-email {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-right: 4px solid var(--accent);
+      padding: 16px;
+    }
+
+    .sim-message-box.sim-is-sms {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-right: 4px solid var(--primary);
+      padding: 16px;
+    }
+
+    .sim-email-header {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+
+    .sim-email-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .sim-email-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sim-email-row strong {
+      color: var(--ink-muted);
+      min-width: 55px;
+    }
+
+    .sim-attachment-box {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background: var(--danger-light);
+      border: 1px dashed rgba(220, 38, 38, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--danger);
+      font-weight: 700;
+    }
+
+    .sim-meta {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      margin-top: 8px;
+      gap: 4px;
+    }
+
+    .sim-question {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+      color: var(--ink-primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sim-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .sim-opt-btn {
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-primary);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+
+    .sim-opt-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .sim-result {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius-md);
+      display: none;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .sim-result.danger {
+      display: block;
+      background: var(--danger-light);
+      color: var(--danger);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+    }
+
+    .sim-result.success {
+      display: block;
+      background: var(--success-light);
+      color: var(--success);
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+
+    .sim-result strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .sim-result ul {
+      margin-top: 8px;
+      padding-right: 18px;
+      color: var(--ink-primary);
+      font-size: 0.85rem;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   STATS STRIP
+─────────────────────────────────────────────────────────── */
+    .stats-strip {
+      background: var(--surface);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 44px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      text-align: center;
+    }
+
+    .stat-item {
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: var(--border-light);
+    }
+
+    .stat-number {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   PROBLEM / REALITY SECTION
+─────────────────────────────────────────────────────────── */
+    .section-problem {
+      padding: 100px 0;
+    }
+
+    .problem-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .problem-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problem-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .problem-card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-md);
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .problem-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--ink-primary);
+    }
+
+    .problem-card p {
+      font-size: 0.95rem;
+      color: var(--ink-muted);
+      line-height: 1.7;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   PRODUCT METHODOLOGY (5 STEPS)
+─────────────────────────────────────────────────────────── */
+    .section-methodology {
+      padding: 100px 0;
+      background: var(--surface-alt);
+    }
+
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .flow-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+    }
+
+    .flow-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .flow-step-number {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .flow-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--ink-primary);
+    }
+
+    .flow-card p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    .flow-tag {
+      margin-top: auto;
+      padding-top: 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   INTERACTIVE EXECUTIVE REPORT PREVIEW
+─────────────────────────────────────────────────────────── */
+    .section-report {
+      padding: 100px 0;
+    }
+
+    .report-preview-box {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .report-top-bar {
+      background: #0B192C;
+      color: #FFF;
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .report-title-area h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .report-badge-confidential {
+      background: rgba(220, 38, 38, 0.2);
+      color: #FCA5A5;
+      border: 1px solid rgba(220, 38, 38, 0.4);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .report-body {
+      padding: 36px;
+    }
+
+    .report-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .kpi-card {
+      background: var(--surface-alt);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .kpi-card-header {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .kpi-card-val {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .kpi-card-val.danger-val {
+      color: var(--danger);
+    }
+
+    .kpi-card-val.success-val {
+      color: var(--success);
+    }
+
+    .kpi-desc {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      margin-top: 6px;
+    }
+
+    /* Department Progress Bars */
+    .dept-score-section {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+    }
+
+    .dept-score-box h4,
+    .recommendations-box h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      color: var(--ink-primary);
+    }
+
+    .dept-bar-item {
+      margin-bottom: 14px;
+    }
+
+    .dept-bar-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .dept-bar-bg {
+      height: 10px;
+      background: var(--surface-alt);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+
+    .dept-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary) 0%, #2DD4BF 100%);
+      border-radius: var(--radius-pill);
+      transition: width 1.2s ease;
+    }
+
+    .recommendations-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .rec-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 14px;
+      background: var(--surface-alt);
+      border-radius: var(--radius-sm);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      border-right: 3px solid var(--primary);
+    }
+
+    .rec-icon {
+      color: var(--primary);
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   SECTOR CUSTOMIZATION
+─────────────────────────────────────────────────────────── */
+    .section-sectors {
+      padding: 100px 0;
+      background: var(--surface-alt);
+    }
+
+    .sector-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .sector-btn {
+      padding: 11px 20px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-secondary);
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sector-btn.active,
+    .sector-btn:hover {
+      background: var(--primary);
+      color: var(--primary-ink);
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(10, 110, 99, 0.25);
+    }
+
+    .sector-display-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 38px;
+      box-shadow: var(--shadow-md);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .sector-display-info h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+
+    .sector-display-info p {
+      color: var(--ink-secondary);
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .sector-threats-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sector-threat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--ink-primary);
+    }
+
+    .sector-threat-item svg {
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .sector-quote-card {
+      background: var(--primary-light);
+      border: 1px dashed var(--primary);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .sector-quote-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .sector-quote-card p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--ink-secondary);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   RISK & ROI CALCULATOR FOR EGYPTIAN BUSINESSES
+─────────────────────────────────────────────────────────── */
+    .section-calculator {
+      padding: 100px 0;
+    }
+
+    .calc-container {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .calc-controls {
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 26px;
+    }
+
+    .calc-group label {
+      display: block;
+      font-weight: 800;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--ink-primary);
+    }
+
+    .calc-range-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .calc-slider {
+      flex: 1;
+      accent-color: var(--primary);
+      height: 6px;
+      cursor: pointer;
+    }
+
+    .calc-val-badge {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 900;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      min-width: 80px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .calc-select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-primary);
+      font-weight: 600;
+      outline: none;
+    }
+
+    .calc-select:focus {
+      border-color: var(--primary);
+    }
+
+    .calc-results {
+      background: linear-gradient(135deg, #0A4F46 0%, #06332C 100%);
+      color: #FFFFFF;
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .calc-result-badge {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .calc-stat-block {
+      margin-bottom: 24px;
+    }
+
+    .calc-stat-block p {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 4px;
+    }
+
+    .calc-stat-block .calc-huge {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: #FB923C;
+      line-height: 1.1;
+    }
+
+    .calc-vs-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-top: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .calc-vs-box strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: #2DD4BF;
+    }
+
+    .calc-vs-box span {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   COMPARISON TABLE (WHY WAAY VS OTHERS)
+─────────────────────────────────────────────────────────── */
+    .section-compare {
+      padding: 100px 0;
+      background: var(--surface-alt);
+    }
+
+    .compare-table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-md);
+      background: var(--surface);
+    }
+
+    .product-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      min-width: 680px;
+    }
+
+    .product-compare-table th,
+    .product-compare-table td {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.96rem;
+    }
+
+    .product-compare-table th {
+      background: var(--surface-alt);
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+    }
+
+    .product-compare-table th.brand-col-head {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .product-compare-table td.brand-col-cell {
+      background: rgba(10, 110, 99, 0.04);
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .table-check {
+      color: var(--primary);
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .table-cross {
+      color: var(--ink-muted);
+      opacity: 0.6;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   PACKAGES & PRICING
+─────────────────────────────────────────────────────────── */
+    .section-pricing {
+      padding: 100px 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 38px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .price-card.featured {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .price-featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--primary-ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 16px;
+      border-radius: var(--radius-pill);
+    }
+
+    .price-card h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: var(--ink-primary);
+    }
+
+    .price-card-desc {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+    }
+
+    .price-amount {
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .price-meta {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 34px;
+      flex: 1;
+    }
+
+    .price-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--ink-secondary);
+    }
+
+    .price-feature-item svg {
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   TESTIMONIALS & CASE STUDIES
+─────────────────────────────────────────────────────────── */
+    .section-cases {
+      padding: 100px 0;
+      background: var(--surface-alt);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .case-card {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .case-company {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .case-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .case-company-info h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .case-company-info p {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+    }
+
+    .case-quote {
+      font-size: 0.98rem;
+      color: var(--ink-secondary);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .case-stat-badge {
+      align-self: flex-start;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--success-light);
+      color: var(--success);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   FAQ ACCORDION
+─────────────────────────────────────────────────────────── */
+    .section-faq {
+      padding: 100px 0;
+    }
+
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 24px;
+      text-align: right;
+      background: none;
+      border: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--ink-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .faq-question svg {
+      transition: transform 0.3s;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .faq-item.active .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 24px;
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .faq-item.active .faq-answer {
+      padding-bottom: 22px;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   BOOKING / CONTACT FORM & CTA
+─────────────────────────────────────────────────────────── */
+    .section-cta {
+      padding: 80px 0 120px;
+    }
+
+    .booking-card {
+      background: linear-gradient(135deg, #09473F 0%, #062B26 100%);
+      border-radius: var(--radius-lg);
+      padding: 60px 48px;
+      color: #FFFFFF;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 56px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .booking-card::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .booking-info h2 {
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .booking-info p {
+      font-size: 1.05rem;
+      opacity: 0.88;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .booking-perks {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .booking-perk-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+    }
+
+    .booking-perk-item svg {
+      color: #2DD4BF;
+    }
+
+    .booking-form {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 34px;
+      color: var(--ink-primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .booking-form h3 {
+      font-size: 1.3rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .booking-form p {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-bottom: 20px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink-secondary);
+    }
+
+    .form-input {
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+      background: var(--bg-page);
+      color: var(--ink-primary);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-input:focus {
+      border-color: var(--primary);
+    }
+
+    .form-msg-box {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .form-msg-box.success {
+      background: var(--success-light);
+      color: var(--success);
+      border: 1.5px solid rgba(5, 150, 105, 0.35);
+    }
+
+    .form-msg-box.error {
+      background: var(--danger-light);
+      color: var(--danger);
+      border: 1.5px solid rgba(220, 38, 38, 0.35);
+    }
+
+    .form-msg-box.loading {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1.5px solid rgba(10, 110, 99, 0.35);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   FOOTER
+─────────────────────────────────────────────────────────── */
+    footer {
+      background: #08111D;
+      color: #8E9BAE;
+      padding: 60px 0 36px;
+      border-top: 1px solid #162436;
+      font-size: 0.9rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand h4 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #2DD4BF;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 320px;
+    }
+
+    .footer-col h5 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #F1F5F9;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col a:hover {
+      color: #2DD4BF;
+    }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid #162436;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.82rem;
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   FLOATING WHATSAPP BUTTON
+─────────────────────────────────────────────────────────── */
+    .floating-wa {
+      position: fixed;
+      bottom: 26px;
+      left: 26px;
+      z-index: 999;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ───────────────────────────────────────────────────────────
+   RESPONSIVE QUERIES
+─────────────────────────────────────────────────────────── */
+    /* Desktop Optimization (PC) */
+    @media (min-width: 993px) {
+      .sim-container {
+        max-width: 500px;
+        margin-inline-start: auto;
+        box-shadow: 0 20px 40px -15px rgba(10, 110, 99, 0.16), 0 0 0 1px var(--border-light);
+      }
+
+      [data-theme="dark"] .sim-container {
+        box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border-light);
+      }
+
+      .sim-opt-btn {
+        min-height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    /* Tablet Optimization */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .sim-container {
+        max-width: 520px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .stat-item:nth-child(2)::after {
+        display: none;
+      }
+
+      .problem-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .dept-score-section {
+        grid-template-columns: 1fr;
+      }
+
+      .report-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .sector-display-card {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-container {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cases-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-card {
+        grid-template-columns: 1fr;
+        padding: 40px 24px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MOBILE NAV — hamburger menu
+    ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 992px) {
+      .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: var(--radius-sm);
+        background: var(--surface-alt);
+        border: 1px solid var(--border-light);
+        font-size: 1.3rem;
+        color: var(--ink-primary);
+        cursor: pointer;
+        order: 3;
+        transition: var(--transition);
+      }
+
+      /* mobile nav drawer */
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 74px;
+        right: 0;
+        left: 0;
+        background: var(--surface);
+        border-bottom: 2px solid var(--primary);
+        flex-direction: column;
+        gap: 0;
+        padding: 12px 0 20px;
+        z-index: 999;
+        box-shadow: var(--shadow-md);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-menu li {
+        width: 100%;
+      }
+
+      .nav-menu .nav-link {
+        display: block;
+        padding: 13px 24px;
+        font-size: 1.05rem;
+        border-bottom: 1px solid var(--border-light);
+      }
+
+      .nav-menu .nav-link::after {
+        display: none;
+      }
+
+      /* hide desktop CTA button in nav on mobile */
+      .nav-actions .btn-primary {
+        display: none;
+      }
+
+      .lang-btn span {
+        display: none;
+      }
+      .lang-btn {
+        padding: 0 10px;
+        min-width: 40px;
+        justify-content: center;
+      }
+
+      .nav-container {
+        height: 64px;
+      }
+
+      .brand-name {
+        font-size: 1.35rem;
+      }
+      .brand-tag {
+        font-size: 0.62rem;
+      }
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    /* Mobile Phone Optimization (Phones) */
+    @media (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item::after {
+        display: none !important;
+      }
+
+      .report-kpi-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Simulator Mobile Polish */
+      .sim-container {
+        border-radius: var(--radius-md);
+        margin: 0 auto;
+      }
+
+      .sim-header {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+
+      .sim-pill {
+        padding: 5px 10px;
+        font-size: 0.74rem;
+      }
+
+      .sim-badge {
+        font-size: 0.68rem;
+        padding: 2px 6px;
+      }
+
+      .sim-body {
+        padding: 14px 12px;
+      }
+
+      .sim-device-header {
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+        gap: 8px;
+      }
+
+      .sim-avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 0.95rem;
+      }
+
+      .sim-sender-info h4 {
+        font-size: 0.86rem;
+      }
+
+      .sim-sender-info p {
+        font-size: 0.72rem;
+      }
+
+      .sim-device-actions {
+        gap: 8px;
+      }
+
+      .sim-device-actions svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .sim-message-box.sim-is-wa {
+        padding: 10px 8px;
+        max-height: 340px;
+        gap: 8px;
+      }
+
+      .wa-bubble {
+        max-width: 92%;
+        padding: 8px 10px 6px 10px;
+        font-size: 0.84rem;
+        line-height: 1.5;
+      }
+
+      .wa-bubble p {
+        font-size: 0.84rem;
+      }
+
+      .wa-badge-pill {
+        font-size: 0.64rem;
+        padding: 1px 5px;
+      }
+
+      .wa-tactic-tag {
+        font-size: 0.63rem;
+      }
+
+      .wa-security-banner {
+        font-size: 0.68rem;
+        padding: 5px 8px;
+        width: 100%;
+        line-height: 1.35;
+      }
+
+      .wa-chat-date {
+        font-size: 0.66rem;
+        padding: 2px 10px;
+      }
+
+      .sim-question {
+        font-size: 0.88rem;
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+
+      .sim-options {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .sim-opt-btn {
+        padding: 12px 14px;
+        font-size: 0.86rem;
+        line-height: 1.45;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .sim-result {
+        padding: 12px;
+        font-size: 0.84rem;
+        margin-top: 12px;
+      }
+    }
+
+    /* Small Phone Screens (iPhone SE, Galaxy Mini, etc.) */
+    @media (max-width: 380px) {
+      .sim-badge {
+        display: none;
+      }
+
+      .sim-header {
+        padding: 8px 10px;
+      }
+
+      .sim-pill {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+      }
+
+      .wa-bubble {
+        max-width: 96%;
+        padding: 7px 9px 5px 9px;
+        font-size: 0.81rem;
+      }
+
+      .sim-avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 0.88rem;
+      }
+
+      .sim-opt-btn {
+        font-size: 0.8rem;
+        padding: 10px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       EXTRA MOBILE POLISH — shared between 600px and 992px
+    ═══════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+
+      /* ── container ── */
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      /* ── hero ── */
+      .hero {
+        padding: 40px 0 50px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(1.75rem, 7.5vw, 2.4rem);
+        margin-bottom: 16px;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+        margin-bottom: 24px;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero-cta-group .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-trust-badges {
+        gap: 10px;
+        padding-top: 18px;
+      }
+
+      .trust-badge {
+        font-size: 0.82rem;
+      }
+
+      /* ── sections spacing ── */
+      .section-problem,
+      .section-methodology,
+      .section-report,
+      .section-sectors,
+      .section-roi,
+      .section-compare,
+      .section-pricing,
+      .section-testimonials,
+      .section-faq,
+      .section-contact {
+        padding: 60px 0;
+      }
+
+      .section-header {
+        margin-bottom: 32px;
+      }
+
+      .section-header h2 {
+        font-size: clamp(1.5rem, 6vw, 1.9rem);
+      }
+
+      .section-header p {
+        font-size: 0.95rem;
+      }
+
+      /* ── problem cards ── */
+      .problem-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .problem-card {
+        padding: 22px 18px;
+      }
+
+      /* ── methodology flow steps ── */
+      .flow-steps {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* ── pricing cards ── */
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* ── sector cards ── */
+      .sector-display-card {
+        grid-template-columns: 1fr;
+      }
+
+      /* ── ROI calculator ── */
+      .calc-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* ── booking form ── */
+      .booking-card {
+        grid-template-columns: 1fr;
+        padding: 28px 16px;
+        gap: 28px;
+      }
+
+      /* ── footer ── */
+      footer {
+        padding: 40px 0 24px;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.78rem;
+      }
+
+      /* ── floating whatsapp button – move up from bottom so it clears mobile browser chrome ── */
+      .floating-wa {
+        bottom: 18px;
+        left: 18px;
+        width: 50px;
+        height: 50px;
+      }
+
+      /* ── buttons full-width in sections ── */
+      .hero-cta-group .btn,
+      .section-cta .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      /* ── stats strip ── */
+      .stats-strip {
+        padding: 28px 0;
+      }
+
+      .stat-number {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+      }
+
+      .stat-label {
+        font-size: 0.82rem;
+      }
+
+      /* ── cases / testimonials ── */
+      .cases-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* ── FAQ accordion ── */
+      .faq-question {
+        font-size: 0.95rem;
+        padding: 16px 14px;
+      }
+
+      .faq-answer {
+        font-size: 0.9rem;
+        padding: 0 14px 16px;
+      }
+
+      /* ── form inputs ── */
+      .form-input,
+      .form-select,
+      .form-textarea {
+        font-size: 1rem;
+      }
+
+      /* ── dept score ── */
+      .dept-score-section {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* ── kpi cards ── */
+      .report-kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      /* ── comparison table horizontal scroll ── */
+      .compare-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -16px;
+        padding: 0 16px;
+      }
+
+      .compare-table {
+        min-width: 540px;
+      }
+    }
+
+    /* ───────────────────────────────────────────────────────────
+       LTR & ENGLISH STYLES (English Mode)
+    ─────────────────────────────────────────────────────────── */
+    [dir="ltr"] {
+      --font-main: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: left;
+    }
+
+    [dir="ltr"] .section-badge .dot {
+      margin-left: 0;
+      margin-right: 8px;
+    }
+
+    [dir="ltr"] .sim-message-box.sim-is-email {
+      border-right: none;
+      border-left: 4px solid var(--accent);
+    }
+
+    [dir="ltr"] .sim-message-box.sim-is-sms {
+      border-right: none;
+      border-left: 4px solid var(--primary);
+    }
+
+    [dir="ltr"] .wa-row.incoming .wa-bubble {
+      border-top-right-radius: 10px;
+      border-top-left-radius: 2px;
+    }
+
+    [dir="ltr"] .wa-row.outgoing .wa-bubble {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 2px;
+    }
+
+    [dir="ltr"] .wa-row.incoming .wa-bubble.urgent {
+      border-right: none;
+      border-left: 4px solid #DC2626;
+    }
+
+    [dir="ltr"] .sim-online-dot {
+      right: auto;
+      left: 1px;
+    }
+
+    [dir="ltr"] .faq-question {
+      text-align: left;
+    }
+
+    [dir="ltr"] .sim-result ul {
+      padding-right: 0;
+      padding-left: 18px;
+    }
+
+    [dir="ltr"] .price-features {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    [dir="ltr"] .trust-badge {
+      text-align: left;
+    }
+
+    [dir="ltr"] .footer-brand p {
+      text-align: left;
+    }
+
+    .btn svg {
+      transform: rotate(180deg);
+      transition: transform 0.2s ease;
+    }
+
+    [dir="ltr"] .btn svg {
+      transform: rotate(0deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+     STICKY NAVIGATION
+══════════════════════════════════════════════════════════ -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#top" class="nav-brand" aria-label="وعي - الصفحة الرئيسية">
+        <div class="brand-icon">
+          <img src="logo-emblem.png" alt="شعار وعي للأمن السيبراني" class="brand-logo-img" width="36" height="36">
+        </div>
+        <div class="brand-text">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span class="brand-name">وعـي</span>
+            <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981; display: inline-block;"></span>
+          </div>
+          <span class="brand-tag">WAAY CYBERSECURITY</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="#simulator" class="nav-link" data-i18n="nav_sim">المحاكاة التفاعلية</a></li>
+        <li><a href="#methodology" class="nav-link" data-i18n="nav_meth">آلية العمل</a></li>
+        <li><a href="#report-preview" class="nav-link" data-i18n="nav_rep">تقرير الإدارة</a></li>
+        <li><a href="#sectors" class="nav-link" data-i18n="nav_sec">القطاعات</a></li>
+        <li><a href="#pricing" class="nav-link" data-i18n="nav_price">الباقات</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav_faq">الأسئلة الشائعة</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeToggleBtn" aria-label="تبديل الوضع الليلي">
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="12" cy="12" r="5" />
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+        <button class="lang-btn" id="langToggleBtn" onclick="toggleLanguage()" aria-label="تبديل اللغة / Switch Language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="langBtnText">English</span>
+        </button>
+        <a href="#contact" class="btn btn-primary" data-i18n="nav_cta">
+          احجز جلسة تجريبية
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════
+     HERO SECTION WITH MULTI-SCENARIO SIMULATOR
+══════════════════════════════════════════════════════════ -->
+  <header class="hero" id="top">
+    <div class="hero-bg-accent"></div>
+    <div class="container hero-grid">
+
+      <!-- Hero Copy -->
+      <div class="hero-content">
+        <div class="section-badge" data-i18n="hero_badge">
+          <span class="dot"></span>
+          حماية الشركات المصرية من الاحتيال الإلكتروني
+        </div>
+        <h1 data-i18n="hero_title">
+          موظفينك هم <span class="highlight">خط الدفاع الأول</span>.. مش الهاكر اللي بيخترق السيرفر!
+        </h1>
+        <p class="hero-lead" data-i18n="hero_lead">
+          أكتر من <strong>90% من حوادث الاختراق في مصر</strong> بتبدأ بضغطه غلط من موظف مستعجل على واتساب أو إيميل مزيف.
+          "وعي" بتدرب فريقك غير التقني بالمصري وبسيناريوهات من قلب شغلك (انستاباي، فواتير إلكترونية، وانتحال صفة
+          الإدارة)، مع قياس فوري بالأرقام.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#contact" class="btn btn-primary btn-lg">
+            <span data-i18n="hero_cta1">ابدأ بجلسة تقييم مجانية</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </a>
+          <a href="#calculator" class="btn btn-secondary btn-lg" data-i18n="hero_cta2">
+            احسب مخاطر شركتك
+          </a>
+        </div>
+
+        <div class="hero-trust-badges">
+          <div class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span data-i18n="trust_1">متوافق مع قانون حماية البيانات 151 لسنة 2020</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span data-i18n="trust_2">تقرير تنفيذي معتمد للإدارة</span>
+          </div>
+          <div class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span data-i18n="trust_3">بدون أي مصطلحات تقنية معقدة</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Simulator Component -->
+      <div class="sim-container" id="simulator">
+        <div class="sim-header">
+          <div class="sim-pill-group">
+            <button class="sim-pill active" data-scenario="whatsapp" data-i18n="sim_tab_wa"
+              onclick="switchSimScenario('whatsapp', this)">واتساب المدير</button>
+            <button class="sim-pill" data-scenario="tax" data-i18n="sim_tab_tax" onclick="switchSimScenario('tax', this)">الفاتورة
+              الإلكترونية</button>
+            <button class="sim-pill" data-scenario="instapay" data-i18n="sim_tab_insta" onclick="switchSimScenario('instapay', this)">انستاباي /
+              البنك</button>
+          </div>
+          <span class="sim-badge" data-i18n="sim_badge">محاكاة حية 🔴</span>
+        </div>
+
+        <div class="sim-body">
+          <div class="sim-device-header">
+            <div class="sim-device-user">
+              <div class="sim-avatar" id="simAvatar">
+                م
+                <span class="sim-online-dot"></span>
+              </div>
+              <div class="sim-sender-info">
+                <h4 id="simSenderName">واتساب: م/ أحمد (المدير التنفيذي)</h4>
+                <p id="simSenderMeta">⚠️ رقم غير مسجل في جهات الاتصال</p>
+              </div>
+            </div>
+            <div class="sim-device-actions">
+              <span title="مكالمة صوتية">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <span title="مكالمة فيديو">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="23 7 16 12 23 17 23 7" />
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="sim-message-box sim-is-wa" id="simContent">
+            <!-- Date Divider -->
+            <div class="wa-chat-date">اليوم</div>
+
+            <!-- WhatsApp Security Alert -->
+            <div class="wa-security-banner">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              <span>🔒 تنبيه واتساب: هذا الرقم غير مسجل بجهات الاتصال. تجنّب مشاركة أموال أو بيانات سرية.</span>
+            </div>
+
+            <!-- Message 1 (Incoming - Attacker) -->
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">رسالة 1</span>
+                  <span class="wa-tactic-tag">تبرير الرقم المجهول وجس النبض</span>
+                </div>
+                <p class="wa-text">صباح الخير يا منى، ده رقمي التاني، تليفوني الأساسي فيه مشكلة. إنتي فاضية؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:40 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mona Reply 1 (Outgoing) -->
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>منى (مسؤولة الحسابات)</span>
+                </div>
+                <p class="wa-text">صباح النور يا باشمهندس أحمد. أيوة مع حضرتك يا فندم، خير؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:41 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message 2 (Incoming - Attacker) -->
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">رسالة 2</span>
+                  <span class="wa-tactic-tag danger">فخ مالي + استعجال مفتعل ⚡</span>
+                </div>
+                <p class="wa-text">أنا في اجتماع برة ومش هعرف أتكلم فون. محتاج تحوّلي <strong
+                    class="highlight-money">65,000 ج.م</strong> على إنستاباي لمورد الخامات عشان نلحق الشحنة، <span
+                    class="highlight-urgency">ضروري حالًا</span>. هبعتلك أصل الفاتورة أول ما أرجع المكتب. متتأخريش!</p>
+                <div class="wa-bubble-footer">
+                  <span>08:42 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mona Reply 2 (Outgoing - The Question) -->
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>رد منى بسؤال (محاولة اتباع اللائحة)</span>
+                </div>
+                <p class="wa-text">تمام يا فندم، بس السيستم محتاج أمر شراء معتمد أو الفاتورة الأول قبل الصرف، وممكن
+                  نتأكد من حساب المورد؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:43 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Message 3 (Incoming - Attacker - Pressure) -->
+            <div class="wa-row incoming">
+              <div class="wa-bubble urgent">
+                <div class="wa-bubble-label danger">
+                  <span class="wa-badge-pill danger">رسالة 3 (بعد ردها بسؤال)</span>
+                  <span class="wa-tactic-tag danger">ترهيب وكسر الإجراءات بالسلطة 🚨</span>
+                </div>
+                <p class="wa-text">مش وقت أسئلة دلوقتي، الشحنة هتتأخر وهنخسر العميل. نفذي وأنا هتحمل مسؤولية القرار.!
+                </p>
+                <div class="wa-bubble-footer">
+                  <span>08:44 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sim-question" id="simQuestion">
+            لو موظف الحسابات في شركتك جاله الموقف ده.. هيتصرف إزاي؟
+          </div>
+
+          <div class="sim-options" id="simOptions">
+            <button class="sim-opt-btn" id="simOptWrong" onclick="checkSimAnswer('wrong')">
+              يحوّل المبلغ بسرعة عشان "المدير مستعجل"
+            </button>
+            <button class="sim-opt-btn" id="simOptCorrect" onclick="checkSimAnswer('correct')">
+              يتصل بالمدير على نمرته المعتادة ويتأكد
+            </button>
+          </div>
+
+          <div class="sim-result" id="simResultBox"></div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════════════
+     FACTS & NUMBERS STRIP
+══════════════════════════════════════════════════════════ -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">91%</div>
+        <div class="stat-label" data-i18n="stat_label_1">من حوادث الاختراق تبدأ بهندسة اجتماعية وخطأ بشري</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">140k+</div>
+        <div class="stat-label" data-i18n="stat_label_2">متوسط خسارة عملية النصب الإلكتروني للشركات الصغيرة بمصر</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">+84%</div>
+        <div class="stat-label" data-i18n="stat_label_3">معدل تحسن وعي الموظفين واكتشافهم للفخاخ بعد جلسة واحدة</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-i18n="stat_num_4">70-90د</div>
+        <div class="stat-label" data-i18n="stat_label_4">جلسة تفاعلية مركزة بدون تعطيل لسير العمل اليومي</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     THE PROBLEM (REALITY IN EGYPT)
+══════════════════════════════════════════════════════════ -->
+  <section class="section-problem" id="problem">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="prob_badge">واقع السوق المصري</div>
+        <h2 data-i18n="prob_title">ليه كورسات الأمن السيبراني التقليدية مش بتنفع مع موظفينك؟</h2>
+        <p data-i18n="prob_subtitle">معظم برامج التوعية بتفشل لأنها معمولة لمهندسي شبكات مش لموظفي المبيعات، الـ HR، وخدمة العملاء في مصر.</p>
+      </div>
+
+      <div class="problem-cards-grid">
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </div>
+          <h3 data-i18n="prob_c1_title">كلام إنجليزي ونظري معقد</h3>
+          <p data-i18n="prob_c1_desc">فيديوهات جاهزة ومترجمة بمصطلحات زي Zero-day وSQL Injection، الموظف بيفتح الفيديو في الخلفية عشان يخلصه
+            ومبيستفدش حاجة في شغله العملي.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <path d="m4.93 4.93 4.24 4.24" />
+              <path d="m14.83 9.17 4.24-4.24" />
+              <path d="m14.83 14.83 4.24 4.24" />
+              <path d="m9.17 14.83-4.24 4.24" />
+            </svg>
+          </div>
+          <h3 data-i18n="prob_c2_title">بعيدة عن الحوادث اللي بتحصل في مصر</h3>
+          <p data-i18n="prob_c2_desc">المحتوى الأجنبي ميعرفش إيه هو انستاباي، ولا نصب شحنات شركات الشحن المحلية، ولا فواتير الضرائب المصرية
+            المزيفة اللي بتدمر أجهزة الشركات يومياً.</p>
+        </div>
+
+        <div class="problem-card">
+          <div class="problem-card-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h3 data-i18n="prob_c3_title">اشتراكات بالدولار ومفيش قياس أثر</h3>
+          <p data-i18n="prob_c3_desc">منصات SaaS العالمية بتطلب آلاف الدولارات سنوياً وبتسيب الإدارة تايهة: "هل فعلاً لو جالنا إيميل ملغوم بكرة
+            الموظف هيعرف يوقفه؟".</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     PRODUCT METHODOLOGY (HOW WAAY WORKS)
+══════════════════════════════════════════════════════════ -->
+  <section class="section-methodology" id="methodology">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="meth_badge">آلية العمل وعي</div>
+        <h2 data-i18n="meth_title">رحلة متكاملة من 5 خطوات لقياس وتغيير سلوك الفريق</h2>
+        <p data-i18n="meth_subtitle">مش مجرد محاضرة بنقول كلمتين ونمشي.. دي منظومة متكاملة بتثبت للإدارة نسبة التحسن بالأرقام.</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-card">
+          <div class="flow-step-number">1</div>
+          <h4 data-i18n="step_1_title">استبيان وتحليل الثغرات</h4>
+          <p data-i18n="step_1_desc">مكالمة 15 دقيقة مع الإدارة لفهم أدوات الشركة (إيميل، واتساب، CRM، درايف) وأكتر أقسام قلقانين عليها.</p>
+          <span class="flow-tag" data-i18n="step_1_tag">قبل الجلسة بأسبوع</span>
+        </div>
+
+        <div class="flow-card">
+          <div class="flow-step-number">2</div>
+          <h4 data-i18n="step_2_title">اختبار قبلي سري</h4>
+          <p data-i18n="step_2_desc"> أسئلة سريعة مبنية على مواقف من شغلهم لتحديد Baseline ونقاط الضعف الحقيقية بدون إحراج لأي موظف.</p>
+          <span class="flow-tag" data-i18n="step_2_tag">قياس نقطة الصفر</span>
+        </div>
+
+        <div class="flow-card">
+          <div class="flow-step-number">3</div>
+          <h4 data-i18n="step_3_title">جلسة حية تفاعلية</h4>
+          <p data-i18n="step_3_desc">75 دقيقة بالمصري (أونلاين أو بمقركم). كل 10 دقائق تفاعل، قصص حقيقية، ونشاط كشف 5 رسائل مزيفة بأيديهم.</p>
+          <span class="flow-tag" data-i18n="step_3_tag">حالات مصرية واقعية</span>
+        </div>
+
+        <div class="flow-card">
+          <div class="flow-step-number">4</div>
+          <h4 data-i18n="step_4_title">تقرير شامل للإدارة</h4>
+          <p data-i18n="step_4_desc">تقرير تنفيذي من 5 إلى 8 صفحات يوضح نسب تحسن كل قسم، ومصفوفة المخاطر، وتوصيات أمنية فورية وقانونية.</p>
+          <span class="flow-tag" data-i18n="step_4_tag">نتائج موثقة</span>
+        </div>
+
+        <div class="flow-card">
+          <div class="flow-step-number">5</div>
+          <h4 data-i18n="step_5_title">محاكاة تصيد بعد 90 يوم</h4>
+          <p data-i18n="step_5_desc">حملة محاكاة تصيد متفق عليها لقياس ثبات السلوك على المدى الطويل والتأكد إن المعلومة تحولت لعادات يومية.</p>
+          <span class="flow-tag" data-i18n="step_5_tag">ضمان الاستمرارية</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     INTERACTIVE SAMPLE EXECUTIVE REPORT
+══════════════════════════════════════════════════════════ -->
+  <section class="section-report" id="report-preview">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="rep_badge">تقرير الإدارة التنفيذي</div>
+        <h2 data-i18n="rep_title">عشان مفيش قرار إدارة بيتاخد من غير أرقام</h2>
+        <p data-i18n="rep_subtitle">بعد كل جلسة، الإدارة بتستلم تقرير مفصل (بدون أسماء موظفين تجنباً للإحراج) بيوضح جاهزية كل قسم للتعامل مع
+          التهديدات.</p>
+      </div>
+
+      <div class="report-preview-box">
+        <div class="report-top-bar">
+          <div class="report-title-area">
+            <h3>
+              <img src="logo-emblem.png" width="22" height="22" alt="وعي" style="vertical-align: middle; object-fit: contain; margin-left: 6px; filter: drop-shadow(0 0 6px rgba(0, 210, 255, 0.45));">
+              <span data-i18n="rep_sample_title">تقرير مؤشرات الأمان البشري | نموذج شركة خدمات لوجستية (القاهرة)</span>
+            </h3>
+          </div>
+          <div class="report-badge-confidential" data-i18n="rep_confidential">سري للإدارة العليا فقط</div>
+        </div>
+
+        <div class="report-body">
+          <div class="report-kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span data-i18n="kpi_1_title">درجة الوعي قبل الجلسة</span>
+                <span>Baseline</span>
+              </div>
+              <div class="kpi-card-val danger-val">38%</div>
+              <div class="kpi-desc" data-i18n="kpi_1_desc">أغلب الموظفين انخدعوا في رسائل استعجال الدفع</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span data-i18n="kpi_2_title">درجة الوعي بعد الجلسة</span>
+                <span>Post-Test</span>
+              </div>
+              <div class="kpi-card-val success-val">89%</div>
+              <div class="kpi-desc" data-i18n="kpi_2_desc">نسبة نجاح تجاوزت الهدف القياسي (70%)</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span data-i18n="kpi_3_title">معدل التحسن الفعلي</span>
+                <span>Growth</span>
+              </div>
+              <div class="kpi-card-val">+134%</div>
+              <div class="kpi-desc" data-i18n="kpi_3_desc">مضاعفة قدرة الفريق على رصد الثغرات</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-card-header">
+                <span data-i18n="kpi_4_title">معدل الإبلاغ عن الشبهات</span>
+                <span>Reporting</span>
+              </div>
+              <div class="kpi-card-val">94%</div>
+              <div class="kpi-desc" data-i18n="kpi_4_desc">الموظفون أصبحوا يبادرون بالإبلاغ فوراً</div>
+            </div>
+          </div>
+
+          <div class="dept-score-section">
+            <div class="dept-score-box">
+              <h4 data-i18n="dept_score_heading">جاهزية الأقسام الحيوية في الشركة:</h4>
+
+              <div class="dept-bar-item">
+                <div class="dept-bar-labels">
+                  <span data-i18n="dept_acc">قسم الحسابات والمالية</span>
+                  <span style="color:var(--primary);" data-i18n="dept_acc_status">94% (ممتاز)</span>
+                </div>
+                <div class="dept-bar-bg">
+                  <div class="dept-bar-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <div class="dept-bar-item">
+                <div class="dept-bar-labels">
+                  <span data-i18n="dept_hr">الموارد البشرية (HR)</span>
+                  <span style="color:var(--primary);" data-i18n="dept_hr_status">88% (جيد جداً)</span>
+                </div>
+                <div class="dept-bar-bg">
+                  <div class="dept-bar-fill" style="width: 88%;"></div>
+                </div>
+              </div>
+
+              <div class="dept-bar-item">
+                <div class="dept-bar-labels">
+                  <span data-i18n="dept_sales">المبيعات والمشتريات</span>
+                  <span style="color:var(--primary);" data-i18n="dept_sales_status">82% (محمي)</span>
+                </div>
+                <div class="dept-bar-bg">
+                  <div class="dept-bar-fill" style="width: 82%;"></div>
+                </div>
+              </div>
+
+              <div class="dept-bar-item">
+                <div class="dept-bar-labels">
+                  <span data-i18n="dept_ops">خدمة العملاء والعمليات</span>
+                  <span style="color:var(--primary);" data-i18n="dept_ops_status">79% (فوق المستهدف)</span>
+                </div>
+                <div class="dept-bar-bg">
+                  <div class="dept-bar-fill" style="width: 79%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="recommendations-box">
+              <h4 data-i18n="rec_heading">أهم التوصيات الفورية للإدارة:</h4>
+              <ul class="recommendations-list">
+                <li class="rec-item">
+                  <span class="rec-icon">✓</span>
+                  <div data-i18n="rec_1">تفعيل التحقق الثنائي (2FA) فوراً على جميع حسابات الواتساب بيزنس وإيميلات الشركة.</div>
+                </li>
+                <li class="rec-item">
+                  <span class="rec-icon">✓</span>
+                  <div data-i18n="rec_2">منع أي تحويل مالي يزيد عن 10,000 ج.م بناءً على رسائل كتابية دون تأكيد صوتي مباشر.</div>
+                </li>
+                <li class="rec-item">
+                  <span class="rec-icon">✓</span>
+                  <div data-i18n="rec_3">تحديد شخص مسؤول في الـ IT أو الإدارة لاستلام صور الرسائل المشبوهة والتحقق منها.</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     SECTOR SPECIFIC CONTENT (TAILORED FOR EGYPT)
+══════════════════════════════════════════════════════════ -->
+  <section class="section-sectors" id="sectors">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="sec_badge">محتوى مخصص لقطاعك</div>
+        <h2 data-i18n="sec_title">مش قالب واحد للكل.. سيناريوهات من قلب مجالك</h2>
+        <p data-i18n="sec_subtitle">جلسة مصنع الكرتون غير جلسة عيادة الأسنان غير جلسة شركة الشحن. المحتوى بيتفصل حسب نوع البيانات والفلوس اللي
+          بتتعاملوا معاها.</p>
+      </div>
+
+      <div class="sector-tabs">
+        <button class="sector-btn active" data-sector-btn="ecommerce" data-i18n="sec_tab_ecom" onclick="setSector('ecommerce')">التجارة الإلكترونية والشحن</button>
+        <button class="sector-btn" data-sector-btn="medical" data-i18n="sec_tab_med" onclick="setSector('medical')">العيادات والمستشفيات</button>
+        <button class="sector-btn" data-sector-btn="factories" data-i18n="sec_tab_fact" onclick="setSector('factories')">المصانع والتوريدات</button>
+        <button class="sector-btn" data-sector-btn="corporate" data-i18n="sec_tab_corp" onclick="setSector('corporate')">المحاماة والمحاسبة</button>
+      </div>
+
+      <div class="sector-display-card" id="sectorCard">
+        <div class="sector-display-info">
+          <h3 id="sectorTitle">التجارة الإلكترونية والخدمات اللوجستية</h3>
+          <p id="sectorDesc">شركات التجارة والشحن في مصر معرضة يومياً لاختراق حسابات الإعلانات وسرقة قواعد بيانات
+            العملاء والاحتيال على بوابات الدفع.</p>
+
+          <ul class="sector-threats-list" id="sectorThreats">
+            <li class="sector-threat-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>روابط شكاوى وهمية على واتساب بتسرق حساب فيسبوك بيزنس مانجر بالـ Pixel بتاعه.</span>
+            </li>
+            <li class="sector-threat-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>إيميلات بوالص شحن مزيفة بامتدادات ملغومة (.exe / .scr) بتشفر ملفات السيرفر.</span>
+            </li>
+            <li class="sector-threat-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>عمليات نصب انستاباي بتأكيد إيصالات تحويل غير حقيقية معدلة بالفوتوشوب.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sector-quote-card">
+          <h4 data-i18n="sec_quote_q">ليه القطاع ده تحديداً في خطر بمصر؟</h4>
+          <p id="sectorQuote">
+            موظف خدمة العملاء أو المبيعات بيكون تحت ضغط وسرعة رد على مئات العملاء يومياً، المحتال بيستغل نقطة
+            "الاستعجال" عشان يخليه يفتح لينك أو يبعت بيانات حساسة في لحظة غفلة.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     ROI & RISK CALCULATOR
+══════════════════════════════════════════════════════════ -->
+  <section class="section-calculator" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="calc_badge">حاسبة المخاطر الاستثمارية</div>
+        <h2 data-i18n="calc_title">كم تبلغ تكلفة عدم تدريب موظفيك؟</h2>
+        <p data-i18n="calc_subtitle">احسب حجم الخسارة المالية والقانونية المحتملة في حال حدوث اختراق أو عملية نصب واحدة لشركتك في مصر.</p>
+      </div>
+
+      <div class="calc-container">
+        <div class="calc-controls">
+          <div class="calc-group">
+            <label for="empRange" data-i18n="calc_lbl_emp">عدد موظفي الشركة الذين يستخدمون كمبيوتر أو موبايل للعمل:</label>
+            <div class="calc-range-wrapper">
+              <input type="range" min="5" max="150" value="25" class="calc-slider" id="empRange"
+                oninput="updateCalculator()">
+              <span class="calc-val-badge" id="empVal">25 موظف</span>
+            </div>
+          </div>
+
+          <div class="calc-group">
+            <label for="calcSector" data-i18n="calc_lbl_sec">قطاع عمل الشركة:</label>
+            <select class="calc-select" id="calcSector" onchange="updateCalculator()">
+              <option value="1.2" data-i18n="calc_opt_ecom">تجارة إلكترونية وتجزئة</option>
+              <option value="1.5" data-i18n="calc_opt_med">خدمات طبية وعيادات</option>
+              <option value="1.8" data-i18n="calc_opt_fin">خدمات مالية ومحاسبة</option>
+              <option value="1.4" data-i18n="calc_opt_fact">مصانع وشركات شحن</option>
+              <option value="1.1" data-i18n="calc_opt_serv">شركات خدمات عامة</option>
+            </select>
+          </div>
+
+          <p style="font-size:0.85rem; color:var(--ink-muted);" data-i18n="calc_disclaimer">
+            * الحساب مبني على متوسط غرامات قانون حماية البيانات الشخصية رقم 151 لسنة 2020، وتكلفة توقف العمل وسرقة
+            التحويلات في السوق المصري.
+          </p>
+        </div>
+
+        <div class="calc-results">
+          <div class="calc-result-badge" data-i18n="calc_badge_res">مؤشر التعرض للخطر السنوي</div>
+          <div class="calc-stat-block">
+            <p data-i18n="calc_lbl_loss">متوسط الخسارة المالية المباشرة المتوقعة لاختراق واحد:</p>
+            <div class="calc-huge" id="lossAmount">185,000 ج.م</div>
+          </div>
+
+          <div class="calc-vs-box">
+            <strong data-i18n="calc_vs_strong">جلسة تدريب "وعي" المتكاملة توفر عليك أكثر من 95% من هذا الخطر!</strong>
+            <span data-i18n="calc_vs_span">استثمار بسيط لمرة واحدة يحمي سمعة شركتك وأموالك من كليك غلط.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     WHY WAAY VS ALTERNATIVES (COMPARISON)
+══════════════════════════════════════════════════════════ -->
+  <section class="section-compare">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="comp_badge">مقارنة الحلول</div>
+        <h2 data-i18n="comp_title">ليه تختار "وعي" بدل المنصات العالمية؟</h2>
+        <p data-i18n="comp_subtitle">الفارق بين كورس روتيني بيعدي ومحدش فاكره، وبين تغيير حقيقي وملموس في تصرفات الموظفين.</p>
+      </div>
+
+      <div class="compare-table-wrapper">
+        <table class="product-compare-table">
+          <thead>
+            <tr>
+              <th data-i18n="comp_th_aspect">وجه المقارنة</th>
+              <th data-i18n="comp_th_global">المنصات العالمية (KnowBe4 / Proofpoint)</th>
+              <th data-i18n="comp_th_ppt">الكورسات المسجلة والـ PPT</th>
+              <th class="brand-col-head" data-i18n="comp_th_waay">منظومة وعي ✦</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong data-i18n="comp_r1_aspect">لغة التقديم</strong></td>
+              <td data-i18n="comp_r1_c1">إنجليزي أو فصحى مترجمة آلياً</td>
+              <td data-i18n="comp_r1_c2">لغة أكاديمية جافة</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r1_c3">✓ بالمصري المفهوم والممتع</span></td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="comp_r2_aspect">السيناريوهات والحالات</strong></td>
+              <td data-i18n="comp_r2_c1">حوادث بأمريكا وأوروبا</td>
+              <td data-i18n="comp_r2_c2">نظريات تعريفية عامة</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r2_c3">✓ حوادث حقيقية من السوق المصري</span></td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="comp_r3_aspect">شكل الجلسة</strong></td>
+              <td data-i18n="comp_r3_c1">فيديوهات قصيرة مملة بدون تفاعل</td>
+              <td data-i18n="comp_r3_c2">محاضرة يلقيها شخص بدون مشاركة</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r3_c3">✓ ورشة تفاعلية ومسابقات كل 10 دقائق</span></td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="comp_r4_aspect">نموذج التسعير</strong></td>
+              <td data-i18n="comp_r4_c1">اشتراك سنوي بالدولار (مكلف جداً)</td>
+              <td data-i18n="comp_r4_c2">سعر الكورس الثابت</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r4_c3">✓ بالجنيه المصري وبدون التزامات سنوية</span></td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="comp_r5_aspect">التقرير المقدم للإدارة</strong></td>
+              <td data-i18n="comp_r5_c1">داشبورد معقد يتطلب مختص أمني</td>
+              <td data-i18n="comp_r5_c2">شهادة حضور صورية فقط</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r5_c3">✓ تقرير تنفيذي 8 صفحات مع توصيات فورية</span></td>
+            </tr>
+            <tr>
+              <td><strong data-i18n="comp_r6_aspect">محاكاة التصيد بعد الجلسة</strong></td>
+              <td data-i18n="comp_r6_c1">معقدة وتتطلب ربط سيرفرات</td>
+              <td data-i18n="comp_r6_c2">غير متاحة إطلاقاً</td>
+              <td class="brand-col-cell"><span class="table-check" data-i18n="comp_r6_c3">✓ محاكاة واقعية متفق عليها بعد 90 يوم</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     PACKAGES & PRICING
+══════════════════════════════════════════════════════════ -->
+  <section class="section-pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="price_badge">باقات واضحة ومدروسة</div>
+        <h2 data-i18n="price_title">استثمر في وعي موظفيك بالجنيه المصري</h2>
+        <p data-i18n="price_subtitle">باقات تناسب الشركات الصغيرة والمتوسطة، بدون عقود احتكارية أو اشتراكات سنوية بالدولار.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Package 1: Discovery -->
+        <div class="price-card">
+          <h3 data-i18n="p1_title">جلسة التوعية الأساسية</h3>
+          <p class="price-card-desc" data-i18n="p1_desc">ممتازة للشركات الناشئة التي ترغب في تجربة ورشة سريعة ومباشرة للموظفين.</p>
+          <div class="price-amount" data-i18n="p1_amount">جلسة واحدة</div>
+          <div class="price-meta" data-i18n="p1_meta">حتى 15 موظف (أونلاين)</div>
+
+          <ul class="price-features">
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p1_f1">جلسة تفاعلية مباشرة 75 دقيقة</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p1_f2">أساسيات الهندسة الاجتماعية والباسوردات</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p1_f3">اختبار بعدي فوري لقياس الاستيعاب</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p1_f4">ورقة إرشادات ملخصة (Cheat-sheet) لكل موظف</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-secondary" data-i18n="p1_btn">اختر الباقة الأساسية</a>
+        </div>
+
+        <!-- Package 2: Standard (Featured) -->
+        <div class="price-card featured">
+          <div class="price-featured-badge" data-i18n="p2_featured">الأكثر طلباً للشركات ✦</div>
+          <h3 data-i18n="p2_title">درع وعي المتكامل</h3>
+          <p class="price-card-desc" data-i18n="p2_desc">الحل الأمثل لقياس وتغيير سلوك الفريق الفعلي وتقديم تقرير موثق للإدارة العليا.</p>
+          <div class="price-amount" data-i18n="p2_amount">البرنامج الشامل</div>
+          <div class="price-meta" data-i18n="p2_meta">حتى 35 موظف (حضوري بمقركم أو أونلاين)</div>
+
+          <ul class="price-features">
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p2_f1"><strong>استبيان مسبق وتخصيص الجلسة</strong> لقطاع الشركة</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p2_f2"><strong>اختبار قبلي + اختبار بعدي</strong> لقياس نسبة التطور</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p2_f3"><strong>تقرير تحليلي للإدارة (5-8 صفحات)</strong> مع خطة التوصيات</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p2_f4"><strong>محاكاة تصيد دورية (Drill)</strong> بعد 90 يوم لضمان عدم النسيان</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p2_f5">شهادات حضور للموظفين وتوافق مع قانون 151 لسنة 2020</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary" data-i18n="p2_btn">احجز البرنامج الشامل</a>
+        </div>
+
+        <!-- Package 3: Retainer -->
+        <div class="price-card">
+          <h3 data-i18n="p3_title">حماية الشركات المستمرة</h3>
+          <p class="price-card-desc" data-i18n="p3_desc">للشركات والمصانع التي تريد برنامجاً مستمراً وتحديثات ربع سنوية لأحدث حيل النصب.</p>
+          <div class="price-amount" data-i18n="p3_amount">برنامج ربع سنوي</div>
+          <div class="price-meta" data-i18n="p3_meta">للشركات من 40 موظف فأكثر</div>
+
+          <ul class="price-features">
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p3_f1">4 جلسات تدريبية متخصصة على مدار العام</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p3_f2">محاكاة تصيد شهرية غير معلنة للموظفين</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p3_f3">تدريب الموظفين الجدد (Onboarding) دورياً</span>
+            </li>
+            <li class="price-feature-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="p3_f4">خط ساخن لاستشارة فريقنا عند استلام رسائل مشبوهة</span>
+            </li>
+          </ul>
+
+          <a href="#contact" class="btn btn-secondary" data-i18n="p3_btn">تواصل لعرض الشركات</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     REAL CASE STUDIES FROM EGYPT
+══════════════════════════════════════════════════════════ -->
+  <section class="section-cases">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="case_badge">قصص وتجارب من أرض الواقع</div>
+        <h2 data-i18n="case_title">إزاي التدريب حمى شركات في مصر من خسائر محققة؟</h2>
+        <p data-i18n="case_subtitle">نماذج واقعية لكيفية مساهمة وعي الموظف في إنقاذ الشركة من كوارث مالية وتشغيلية.</p>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card">
+          <div class="case-company">
+            <div class="case-avatar">ش</div>
+            <div class="case-company-info">
+              <h4 data-i18n="case_c1_title">شركة شحن وتجارة إلكترونية</h4>
+              <p data-i18n="case_c1_sub">التجمع الخامس، القاهرة · 28 موظف</p>
+            </div>
+          </div>
+          <div class="case-quote" data-i18n="case_c1_quote">
+            "بعد أسبوعين بس من جلسة وعي، موظف الحسابات استلم رسالة واتساب بنمرة شبيهة جداً بنمرة صاحب الشركة بيطلب تحويل
+            عاجل لمورد بمبلغ 110 ألف جنيه. الموظف تذكر قاعدة 'الاتصال الصوتي الإجباري' اللي اتعلمناها، واكتشفنا إنها
+            محاولة احتيال متقنة كانت هتخسرنا كل أرباح الشهر!"
+          </div>
+          <div class="case-stat-badge" data-i18n="case_c1_stat">تم إيقاف تحويل احتيالي بمبلغ 110,000 ج.م</div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-company">
+            <div class="case-avatar">م</div>
+            <div class="case-company-info">
+              <h4 data-i18n="case_c2_title">مجمع عيادات ومختبرات تخصصية</h4>
+              <p data-i18n="case_c2_sub">المهندسين، الجيزة · 45 موظف وممرض</p>
+            </div>
+          </div>
+          <div class="case-quote" data-i18n="case_c2_quote">
+            "كان عندنا رعب دائم من تسريب ملفات وسجلات المرضى أو برامج الفدية. جلسة وعي كانت مبسطة جداً لطاقم الاستقبال
+            والممرضين، وقدرنا لأول مرة نقيس درجة وعيهم بتقرير رسمي قفلنا بيه ثغرات مشاركة الباسوردات وحافظنا على سمعة
+            المركز."
+          </div>
+          <div class="case-stat-badge" data-i18n="case_c2_stat">تحسن وعي طاقم الاستقبال من 32% إلى 86%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     FAQ ACCORDION
+══════════════════════════════════════════════════════════ -->
+  <section class="section-faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge" data-i18n="faq_badge">كل اللي محتاج تعرفه</div>
+        <h2 data-i18n="faq_title">الأسئلة الأكثر شيوعاً</h2>
+        <p data-i18n="faq_subtitle">إجابات مباشرة على استفسارات أصحاب الأعمال ومديري الشركات في مصر.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq_q1">هل الموظفين محتاجين أي خلفية تقنية عشان يفهموا الجلسة؟</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a1">
+            نهائياً! الجلسة مصممة من الأساس للموظف غير التقني (سكرتارية، مبيعات، موارد بشرية، حسابات، خدمة عملاء). بنشرح
+            بالمصري البسيط وبأمثلة عملية واقعية بدون أي مصطلحات تقنية أو أوامر معقدة.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq_q2">هل الجلسة أونلاين ولا بتيجوا مقر شركتنا؟</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a2">
+            بنقدم الخيارين! للشركات داخل القاهرة الكبرى والجيزة بنقدر نقدم الجلسة حضورياً في مقر شركتكم، أو أونلاين عبر
+            Zoom أو Google Meet بكامل التفاعل والمحاكاة الحية لباقي المحافظات.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq_q3">هل بتطلبوا أي صلاحيات دخول على أجهزتنا أو شبكتنا؟</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a3">
+            لا على الإطلاق! "وعي" متخصصة في تدريب العنصر البشري (Human Layer Security). مش بنطلب أي باسوردات أو برامج
+            ننزلها على أجهزتكم، وبنوقع اتفاقية عدم إفصاح وسرية تامة (NDA) قبل بدء أي عمل.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq_q4">إزاي بتضمنوا خصوصية الموظفين وعدم إحراجهم في التقرير؟</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a4">
+            كل التقييمات والاختبارات مجهولة الهوية في التقرير التنفيذي للإدارة. بنعرض نسب النجاح على مستوى الأقسام
+            (مثلاً: قسم المبيعات 80%) وليس بالأسماء، لأن هدفنا توعية وتدريب الفريق وليس المعاقبة أو التصيد للموظفين.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span data-i18n="faq_q5">هل التدريب ده بيساعدنا في الامتثال لقانون حماية البيانات المصري؟</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer" data-i18n="faq_a5">
+            نعم، قانون حماية البيانات الشخصية المصري رقم 151 لسنة 2020 يلزم الشركات بتأمين بيانات العملاء وتوعية
+            الموظفين بالتعامل السليم معها. تقرير وشهادات "وعي" تعتبر إثباتاً رسمياً ومستنداً قوياً لالتزام شركتك بتدريب
+            كوادرها.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     FINAL CTA / BOOKING FORM
+══════════════════════════════════════════════════════════ -->
+  <section class="section-cta" id="contact">
+    <div class="container">
+      <div class="booking-card">
+        <div class="booking-info">
+          <h2 data-i18n="book_h2">جاهز تقفل أكبر ثغرة أمنية في شركتك؟</h2>
+          <p data-i18n="book_p">
+            احجز جلسة استكشافية مجانية لمدة 15 دقيقة مع أحد مستشارينا، وهنحلل وضع شركتك ونحدد أنسب سيناريوهات لتدريب
+            فريقك.
+          </p>
+
+          <ul class="booking-perks">
+            <li class="booking-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="book_perk1">رد فوري خلال ساعات العمل من خبير متخصص</span>
+            </li>
+            <li class="booking-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="book_perk2">نموذج استبيان مجاني لاكتشاف ثغرات موظفيك</span>
+            </li>
+            <li class="booking-perk-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span data-i18n="book_perk3">اتفاقية سرية معلومات (NDA) لضمان أمان بياناتك</span>
+            </li>
+          </ul>
+
+          <div style="margin-top: 32px;">
+            <a href="https://wa.me/201000000000?text=مساء%20الخير%20أنا%20مهتم%20بجلسة%20توعية%20أمن%20سيبراني%20من%20وعي%20لشركتي"
+              target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+              <!-- WhatsApp Icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              <span data-i18n="book_wa_btn">تحدث معنا مباشرة على واتساب</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Booking Form -->
+        <form class="booking-form" onsubmit="event.preventDefault(); handleFormSubmit();">
+          <h3 data-i18n="form_h3">طلب استشارة وجلسة تجريبية</h3>
+          <p data-i18n="form_sub">املا البيانات وهيتواصل معاك خبير أمني لمناقشة احتياجات شركتك:</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fName" data-i18n="form_lbl_name">اسمك الكريم:</label>
+              <input type="text" id="fName" required class="form-input" data-i18n-ph="form_ph_name" placeholder="أحمد محمد">
+            </div>
+
+            <div class="form-group">
+              <label for="fPhone" data-i18n="form_lbl_phone">رقم التليفون / واتساب:</label>
+              <input type="tel" id="fPhone" required class="form-input" data-i18n-ph="form_ph_phone" placeholder="010XXXXXXXX">
+            </div>
+
+            <div class="form-group">
+              <label for="fCompany" data-i18n="form_lbl_company">اسم الشركة أو المنشأة:</label>
+              <input type="text" id="fCompany" required class="form-input" data-i18n-ph="form_ph_company" placeholder="اسم شركتك">
+            </div>
+
+            <div class="form-group">
+              <label for="fSector" data-i18n="form_lbl_sec">مجال عمل الشركة:</label>
+              <select id="fSector" class="form-input">
+                <option value="ecommerce" data-i18n="form_opt_ecom">تجارة إلكترونية وشحن</option>
+                <option value="medical" data-i18n="form_opt_med">عيادات ومراكز طبية</option>
+                <option value="factory" data-i18n="form_opt_fact">مصانع وتوريدات</option>
+                <option value="financial" data-i18n="form_opt_fin">محاسبة ومحاماة وماليات</option>
+                <option value="other" data-i18n="form_opt_other">مجال آخر</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="fCount" data-i18n="form_lbl_count">عدد الموظفين المتوقع تدريبهم:</label>
+              <select id="fCount" class="form-input">
+                <option value="under15" data-i18n="form_opt_c1">أقل من 15 موظف</option>
+                <option value="15-40" data-i18n="form_opt_c2">من 15 إلى 40 موظف</option>
+                <option value="40-100" data-i18n="form_opt_c3">من 40 إلى 100 موظف</option>
+                <option value="more100" data-i18n="form_opt_c4">أكثر من 100 موظف</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" id="fSubmitBtn" class="btn btn-primary btn-lg" style="width: 100%;">
+            <span data-i18n="form_submit_btn">تأكيد طلب الجلسة التجريبية</span>
+          </button>
+
+          <div id="formMsg" class="form-msg-box" style="display:none;"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+            <div class="brand-icon" style="width: 50px; height: 50px; padding: 5px; border-radius: 14px;">
+              <img src="logo-emblem.png" alt="شعار وعي" class="brand-logo-img" width="40" height="40">
+            </div>
+            <div>
+              <div style="font-size: 1.55rem; font-weight: 900; color: #FFFFFF; line-height: 1.1;">وعـي <span style="font-size: 0.9rem; color: #38BDF8; font-weight: 700;">| WAAY</span></div>
+              <div style="font-size: 0.7rem; font-weight: 800; color: #00B4D8; letter-spacing: 2px;">CYBERSECURITY • HUMAN LAYER SECURITY</div>
+            </div>
+          </div>
+          <p data-i18n="footer_brand_desc">
+            المنصة المصرية الرائدة في جلسات التوعية بالأمن السيبراني وبناء خط الدفاع البشري للشركات الصغيرة والمتوسطة.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col1_h5">الخدمة والمنهجية</h5>
+          <ul>
+            <li><a href="#simulator" data-i18n="nav_sim">المحاكاة التفاعلية</a></li>
+            <li><a href="#methodology" data-i18n="nav_meth">المنهجية الخماسية</a></li>
+            <li><a href="#report-preview" data-i18n="nav_rep">نموذج تقرير الإدارة</a></li>
+            <li><a href="#calculator" data-i18n="hero_cta2">حاسبة المخاطر</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col2_h5">القطاعات المستهدفة</h5>
+          <ul>
+            <li><a href="#sectors" data-i18n="sec_tab_ecom">التجارة والشحن</a></li>
+            <li><a href="#sectors" data-i18n="sec_tab_med">العيادات الطبية</a></li>
+            <li><a href="#sectors" data-i18n="sec_tab_fact">المصانع والتوريدات</a></li>
+            <li><a href="#sectors" data-i18n="sec_tab_corp">المحاسبة والمحاماة</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footer_col3_h5">تواصل معنا</h5>
+          <ul>
+            <li data-i18n="footer_loc">القاهرة · الجيزة · الإسكندرية</li>
+            <li><a href="mailto:contact@waay-security.com">contact@waay-security.com</a></li>
+            <li><a href="https://wa.me/201000000000" target="_blank" rel="noopener" data-i18n="footer_wa">واتساب الدعم المباشر</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div data-i18n="footer_copy">جميع الحقوق محفوظة © 2026 لمشروع وعي (Waay Security Awareness).</div>
+        <div style="opacity: 0.7;" data-i18n="footer_law">متوافق مع مبادئ قانون حماية البيانات الشخصية رقم 151 لسنة 2020.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════════════
+     FLOATING WHATSAPP BUTTON
+══════════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/201000000000?text=مساء%20الخير%20عايز%20استفسر%20عن%20جلسات%20التوعية%20للشركات%20من%20وعي"
+    class="floating-wa" target="_blank" rel="noopener" aria-label="تواصل واتساب مباشر">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.05 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- ══════════════════════════════════════════════════════════
+     CLIENT-SIDE JAVASCRIPT LOGIC
+══════════════════════════════════════════════════════════ -->
+  <script>
+    // ──────────────────────────────────────────
+    // 0. Bilingual Translation Engine (Arabic & English)
+    // ──────────────────────────────────────────
+    let currentLang = 'ar';
+    let currentScenarioKey = 'whatsapp';
+    let currentSectorKey = 'ecommerce';
+
+    const I18N = {
+      ar: {
+        page_title: "وعي | Waay – خط الدفاع البشري الأول لشركتك في مصر",
+        nav_sim: "المحاكاة التفاعلية",
+        nav_meth: "آلية العمل",
+        nav_rep: "تقرير الإدارة",
+        nav_sec: "القطاعات",
+        nav_price: "الباقات",
+        nav_faq: "الأسئلة الشائعة",
+        nav_cta: "احجز جلسة تجريبية",
+
+        hero_badge: '<span class="dot"></span>حماية الشركات المصرية من الاحتيال الإلكتروني',
+        hero_title: 'موظفينك هم <span class="highlight">خط الدفاع الأول</span>.. مش الهاكر اللي بيخترق السيرفر!',
+        hero_lead: 'أكتر من <strong>90% من حوادث الاختراق في مصر</strong> بتبدأ بضغطه غلط من موظف مستعجل على واتساب أو إيميل مزيف. "وعي" بتدرب فريقك غير التقني بالمصري وبسيناريوهات من قلب شغلك (انستاباي، فواتير إلكترونية، وانتحال صفة الإدارة)، مع قياس فوري بالأرقام.',
+        hero_cta1: 'ابدأ بجلسة تقييم مجانية',
+        hero_cta2: 'احسب مخاطر شركتك',
+        trust_1: 'متوافق مع قانون حماية البيانات 151 لسنة 2020',
+        trust_2: 'تقرير تنفيذي معتمد للإدارة',
+        trust_3: 'بدون أي مصطلحات تقنية معقدة',
+
+        sim_tab_wa: 'واتساب المدير',
+        sim_tab_tax: 'الفاتورة الإلكترونية',
+        sim_tab_insta: 'انستاباي / البنك',
+        sim_badge: 'محاكاة حية 🔴',
+
+        stat_label_1: 'من حوادث الاختراق تبدأ بهندسة اجتماعية وخطأ بشري',
+        stat_label_2: 'متوسط خسارة عملية النصب الإلكتروني للشركات الصغيرة بمصر',
+        stat_label_3: 'معدل تحسن وعي الموظفين واكتشافهم للفخاخ بعد جلسة واحدة',
+        stat_num_4: '70-90د',
+        stat_label_4: 'جلسة تفاعلية مركزة بدون تعطيل لسير العمل اليومي',
+
+        prob_badge: 'واقع السوق المصري',
+        prob_title: 'ليه كورسات الأمن السيبراني التقليدية مش بتنفع مع موظفينك؟',
+        prob_subtitle: 'معظم برامج التوعية بتفشل لأنها معمولة لمهندسي شبكات مش لموظفي المبيعات، الـ HR، وخدمة العملاء في مصر.',
+        prob_c1_title: 'كلام إنجليزي ونظري معقد',
+        prob_c1_desc: 'فيديوهات جاهزة ومترجمة بمصطلحات زي Zero-day وSQL Injection، الموظف بيفتح الفيديو في الخلفية عشان يخلصه ومبيستفدش حاجة في شغله العملي.',
+        prob_c2_title: 'بعيدة عن الحوادث اللي بتحصل في مصر',
+        prob_c2_desc: 'المحتوى الأجنبي ميعرفش إيه هو انستاباي، ولا نصب شحنات شركات الشحن المحلية، ولا فواتير الضرائب المصرية المزيفة اللي بتدمر أجهزة الشركات يومياً.',
+        prob_c3_title: 'اشتراكات بالدولار ومفيش قياس أثر',
+        prob_c3_desc: 'منصات SaaS العالمية بتطلب آلاف الدولارات سنوياً وبتسيب الإدارة تايهة: "هل فعلاً لو جالنا إيميل ملغوم بكرة الموظف هيعرف يوقفه؟".',
+
+        meth_badge: 'آلية العمل وعي',
+        meth_title: 'رحلة متكاملة من 5 خطوات لقياس وتغيير سلوك الفريق',
+        meth_subtitle: 'مش مجرد محاضرة بنقول كلمتين ونمشي.. دي منظومة متكاملة بتثبت للإدارة نسبة التحسن بالأرقام.',
+        step_1_title: 'استبيان وتحليل الثغرات',
+        step_1_desc: 'مكالمة 15 دقيقة مع الإدارة لفهم أدوات الشركة (إيميل، واتساب، CRM، درايف) وأكتر أقسام قلقانين عليها.',
+        step_1_tag: 'قبل الجلسة بأسبوع',
+        step_2_title: 'اختبار قبلي سري',
+        step_2_desc: 'أسئلة سريعة مبنية على مواقف من شغلهم لتحديد Baseline ونقاط الضعف الحقيقية بدون إحراج لأي موظف.',
+        step_2_tag: 'قياس نقطة الصفر',
+        step_3_title: 'جلسة حية تفاعلية',
+        step_3_desc: '75 دقيقة بالمصري (أونلاين أو بمقركم). كل 10 دقائق تفاعل، قصص حقيقية، ونشاط كشف 5 رسائل مزيفة بأيديهم.',
+        step_3_tag: 'حالات مصرية واقعية',
+        step_4_title: 'تقرير شامل للإدارة',
+        step_4_desc: 'تقرير تنفيذي من 5 إلى 8 صفحات يوضح نسب تحسن كل قسم، ومصفوفة المخاطر، وتوصيات أمنية فورية وقانونية.',
+        step_4_tag: 'نتائج موثقة',
+        step_5_title: 'محاكاة تصيد بعد 90 يوم',
+        step_5_desc: 'حملة محاكاة تصيد متفق عليها لقياس ثبات السلوك على المدى الطويل والتأكد إن المعلومة تحولت لعادات يومية.',
+        step_5_tag: 'ضمان الاستمرارية',
+
+        rep_badge: 'تقرير الإدارة التنفيذي',
+        rep_title: 'عشان مفيش قرار إدارة بيتاخد من غير أرقام',
+        rep_subtitle: 'بعد كل جلسة، الإدارة بتستلم تقرير مفصل (بدون أسماء موظفين تجنباً للإحراج) بيوضح جاهزية كل قسم للتعامل مع التهديدات.',
+        rep_sample_title: 'تقرير مؤشرات الأمان البشري | نموذج شركة خدمات لوجستية (القاهرة)',
+        rep_confidential: 'سري للإدارة العليا فقط',
+        kpi_1_title: 'درجة الوعي قبل الجلسة',
+        kpi_1_desc: 'أغلب الموظفين انخدعوا في رسائل استعجال الدفع',
+        kpi_2_title: 'درجة الوعي بعد الجلسة',
+        kpi_2_desc: 'نسبة نجاح تجاوزت الهدف القياسي (70%)',
+        kpi_3_title: 'معدل التحسن الفعلي',
+        kpi_3_desc: 'مضاعفة قدرة الفريق على رصد الثغرات',
+        kpi_4_title: 'معدل الإبلاغ عن الشبهات',
+        kpi_4_desc: 'الموظفون أصبحوا يبادرون بالإبلاغ فوراً',
+        dept_score_heading: 'جاهزية الأقسام الحيوية في الشركة:',
+        dept_acc: 'قسم الحسابات والمالية',
+        dept_acc_status: '94% (ممتاز)',
+        dept_hr: 'الموارد البشرية (HR)',
+        dept_hr_status: '88% (جيد جداً)',
+        dept_sales: 'المبيعات والمشتريات',
+        dept_sales_status: '82% (محمي)',
+        dept_ops: 'خدمة العملاء والعمليات',
+        dept_ops_status: '79% (فوق المستهدف)',
+        rec_heading: 'أهم التوصيات الفورية للإدارة:',
+        rec_1: 'تفعيل التحقق الثنائي (2FA) فوراً على جميع حسابات الواتساب بيزنس وإيميلات الشركة.',
+        rec_2: 'منع أي تحويل مالي يزيد عن 10,000 ج.م بناءً على رسائل كتابية دون تأكيد صوتي مباشر.',
+        rec_3: 'تحديد شخص مسؤول في الـ IT أو الإدارة لاستلام صور الرسائل المشبوهة والتحقق منها.',
+
+        sec_badge: 'محتوى مخصص لقطاعك',
+        sec_title: 'مش قالب واحد للكل.. سيناريوهات من قلب مجالك',
+        sec_subtitle: 'جلسة مصنع الكرتون غير جلسة عيادة الأسنان غير جلسة شركة الشحن. المحتوى بيتفصل حسب نوع البيانات والفلوس اللي بتتعاملوا معاها.',
+        sec_tab_ecom: 'التجارة الإلكترونية والشحن',
+        sec_tab_med: 'العيادات والمستشفيات',
+        sec_tab_fact: 'المصانع والتوريدات',
+        sec_tab_corp: 'المحاماة والمحاسبة',
+        sec_quote_q: 'ليه القطاع ده تحديداً في خطر بمصر؟',
+
+        calc_badge: 'حاسبة المخاطر الاستثمارية',
+        calc_title: 'كم تبلغ تكلفة عدم تدريب موظفيك؟',
+        calc_subtitle: 'احسب حجم الخسارة المالية والقانونية المحتملة في حال حدوث اختراق أو عملية نصب واحدة لشركتك في مصر.',
+        calc_lbl_emp: 'عدد موظفي الشركة الذين يستخدمون كمبيوتر أو موبايل للعمل:',
+        calc_lbl_sec: 'قطاع عمل الشركة:',
+        calc_opt_ecom: 'تجارة إلكترونية وتجزئة',
+        calc_opt_med: 'خدمات طبية وعيادات',
+        calc_opt_fin: 'خدمات مالية ومحاسبة',
+        calc_opt_fact: 'مصانع وشركات شحن',
+        calc_opt_serv: 'شركات خدمات عامة',
+        calc_disclaimer: '* الحساب مبني على متوسط غرامات قانون حماية البيانات الشخصية رقم 151 لسنة 2020، وتكلفة توقف العمل وسرقة التحويلات في السوق المصري.',
+        calc_badge_res: 'مؤشر التعرض للخطر السنوي',
+        calc_lbl_loss: 'متوسط الخسارة المالية المباشرة المتوقعة لاختراق واحد:',
+        calc_vs_strong: 'جلسة تدريب "وعي" المتكاملة توفر عليك أكثر من 95% من هذا الخطر!',
+        calc_vs_span: 'استثمار بسيط لمرة واحدة يحمي سمعة شركتك وأموالك من كليك غلط.',
+
+        comp_badge: 'مقارنة الحلول',
+        comp_title: 'ليه تختار "وعي" بدل المنصات العالمية؟',
+        comp_subtitle: 'الفارق بين كورس روتيني بيعدي ومحدش فاكره، وبين تغيير حقيقي وملموس في تصرفات الموظفين.',
+        comp_th_aspect: 'وجه المقارنة',
+        comp_th_global: 'المنصات العالمية (KnowBe4 / Proofpoint)',
+        comp_th_ppt: 'الكورسات المسجلة والـ PPT',
+        comp_th_waay: 'منظومة وعي ✦',
+        comp_r1_aspect: 'لغة التقديم',
+        comp_r1_c1: 'إنجليزي أو فصحى مترجمة آلياً',
+        comp_r1_c2: 'لغة أكاديمية جافة',
+        comp_r1_c3: '✓ بالمصري المفهوم والممتع',
+        comp_r2_aspect: 'السيناريوهات والحالات',
+        comp_r2_c1: 'حوادث بأمريكا وأوروبا',
+        comp_r2_c2: 'نظريات تعريفية عامة',
+        comp_r2_c3: '✓ حوادث حقيقية من السوق المصري',
+        comp_r3_aspect: 'شكل الجلسة',
+        comp_r3_c1: 'فيديوهات قصيرة مملة بدون تفاعل',
+        comp_r3_c2: 'محاضرة يلقيها شخص بدون مشاركة',
+        comp_r3_c3: '✓ ورشة تفاعلية ومسابقات كل 10 دقائق',
+        comp_r4_aspect: 'نموذج التسعير',
+        comp_r4_c1: 'اشتراك سنوي بالدولار (مكلف جداً)',
+        comp_r4_c2: 'سعر الكورس الثابت',
+        comp_r4_c3: '✓ بالجنيه المصري وبدون التزامات سنوية',
+        comp_r5_aspect: 'التقرير المقدم للإدارة',
+        comp_r5_c1: 'داشبورد معقد يتطلب مختص أمني',
+        comp_r5_c2: 'شهادة حضور صورية فقط',
+        comp_r5_c3: '✓ تقرير تنفيذي 8 صفحات مع توصيات فورية',
+        comp_r6_aspect: 'محاكاة التصيد بعد الجلسة',
+        comp_r6_c1: 'معقدة وتتطلب ربط سيرفرات',
+        comp_r6_c2: 'غير متاحة إطلاقاً',
+        comp_r6_c3: '✓ محاكاة واقعية متفق عليها بعد 90 يوم',
+
+        price_badge: 'باقات واضحة ومدروسة',
+        price_title: 'استثمر في وعي موظفيك بالجنيه المصري',
+        price_subtitle: 'باقات تناسب الشركات الصغيرة والمتوسطة، بدون عقود احتكارية أو اشتراكات سنوية بالدولار.',
+        p1_title: 'جلسة التوعية الأساسية',
+        p1_desc: 'ممتازة للشركات الناشئة التي ترغب في تجربة ورشة سريعة ومباشرة للموظفين.',
+        p1_amount: 'جلسة واحدة',
+        p1_meta: 'حتى 15 موظف (أونلاين)',
+        p1_f1: 'جلسة تفاعلية مباشرة 75 دقيقة',
+        p1_f2: 'أساسيات الهندسة الاجتماعية والباسوردات',
+        p1_f3: 'اختبار بعدي فوري لقياس الاستيعاب',
+        p1_f4: 'ورقة إرشادات ملخصة (Cheat-sheet) لكل موظف',
+        p1_btn: 'اختر الباقة الأساسية',
+
+        p2_featured: 'الأكثر طلباً للشركات ✦',
+        p2_title: 'درع وعي المتكامل',
+        p2_desc: 'الحل الأمثل لقياس وتغيير سلوك الفريق الفعلي وتقديم تقرير موثق للإدارة العليا.',
+        p2_amount: 'البرنامج الشامل',
+        p2_meta: 'حتى 35 موظف (حضوري بمقركم أو أونلاين)',
+        p2_f1: '<strong>استبيان مسبق وتخصيص الجلسة</strong> لقطاع الشركة',
+        p2_f2: '<strong>اختبار قبلي + اختبار بعدي</strong> لقياس نسبة التطور',
+        p2_f3: '<strong>تقرير تحليلي للإدارة (5-8 صفحات)</strong> مع خطة التوصيات',
+        p2_f4: '<strong>محاكاة تصيد دورية (Drill)</strong> بعد 90 يوم لضمان عدم النسيان',
+        p2_f5: 'شهادات حضور للموظفين وتوافق مع قانون 151 لسنة 2020',
+        p2_btn: 'احجز البرنامج الشامل',
+
+        p3_title: 'حماية الشركات المستمرة',
+        p3_desc: 'للشركات والمصانع التي تريد برنامجاً مستمراً وتحديثات ربع سنوية لأحدث حيل النصب.',
+        p3_amount: 'برنامج ربع سنوي',
+        p3_meta: 'للشركات من 40 موظف فأكثر',
+        p3_f1: '4 جلسات تدريبية متخصصة على مدار العام',
+        p3_f2: 'محاكاة تصيد شهرية غير معلنة للموظفين',
+        p3_f3: 'تدريب الموظفين الجدد (Onboarding) دورياً',
+        p3_f4: 'خط ساخن لاستشارة فريقنا عند استلام رسائل مشبوهة',
+        p3_btn: 'تواصل لعرض الشركات',
+
+        case_badge: 'قصص وتجارب من أرض الواقع',
+        case_title: 'إزاي التدريب حمى شركات في مصر من خسائر محققة؟',
+        case_subtitle: 'نماذج واقعية لكيفية مساهمة وعي الموظف في إنقاذ الشركة من كوارث مالية وتشغيلية.',
+        case_c1_title: 'شركة شحن وتجارة إلكترونية',
+        case_c1_sub: 'التجمع الخامس، القاهرة · 28 موظف',
+        case_c1_quote: '"بعد أسبوعين بس من جلسة وعي، موظف الحسابات استلم رسالة واتساب بنمرة شبيهة جداً بنمرة صاحب الشركة بيطلب تحويل عاجل لمورد بمبلغ 110 ألف جنيه. الموظف تذكر قاعدة \'الاتصال الصوتي الإجباري\' اللي اتعلمناها، واكتشفنا إنها محاولة احتيال متقنة كانت هتخسرنا كل أرباح الشهر!"',
+        case_c1_stat: 'تم إيقاف تحويل احتيالي بمبلغ 110,000 ج.م',
+        case_c2_title: 'مجمع عيادات ومختبرات تخصصية',
+        case_c2_sub: 'المهندسين، الجيزة · 45 موظف وممرض',
+        case_c2_quote: '"كان عندنا رعب دائم من تسريب ملفات وسجلات المرضى أو برامج الفدية. جلسة وعي كانت مبسطة جداً لطاقم الاستقبال والممرضين، وقدرنا لأول مرة نقيس درجة وعيهم بتقرير رسمي قفلنا بيه ثغرات مشاركة الباسوردات وحافظنا على سمعة المركز."',
+        case_c2_stat: 'تحسن وعي طاقم الاستقبال من 32% إلى 86%',
+
+        faq_badge: 'كل اللي محتاج تعرفه',
+        faq_title: 'الأسئلة الأكثر شيوعاً',
+        faq_subtitle: 'إجابات مباشرة على استفسارات أصحاب الأعمال ومديري الشركات في مصر.',
+        faq_q1: 'هل الموظفين محتاجين أي خلفية تقنية عشان يفهموا الجلسة؟',
+        faq_a1: 'نهائياً! الجلسة مصممة من الأساس للموظف غير التقني (سكرتارية، مبيعات، موارد بشرية، حسابات، خدمة عملاء). بنشرح بالمصري البسيط وبأمثلة عملية واقعية بدون أي مصطلحات تقنية أو أوامر معقدة.',
+        faq_q2: 'هل الجلسة أونلاين ولا بتيجوا مقر شركتنا؟',
+        faq_a2: 'بنقدم الخيارين! للشركات داخل القاهرة الكبرى والجيزة بنقدر نقدم الجلسة حضورياً في مقر شركتكم، أو أونلاين عبر Zoom أو Google Meet بكامل التفاعل والمحاكاة الحية لباقي المحافظات.',
+        faq_q3: 'هل بتطلبوا أي صلاحيات دخول على أجهزتنا أو شبكتنا؟',
+        faq_a3: 'لا على الإطلاق! "وعي" متخصصة في تدريب العنصر البشري (Human Layer Security). مش بنطلب أي باسوردات أو برامج ننزلها على أجهزتكم، وبنوقع اتفاقية عدم إفصاح وسرية تامة (NDA) قبل بدء أي عمل.',
+        faq_q4: 'إزاي بتضمنوا خصوصية الموظفين وعدم إحراجهم في التقرير؟',
+        faq_a4: 'كل التقييمات والاختبارات مجهولة الهوية في التقرير التنفيذي للإدارة. بنعرض نسب النجاح على مستوى الأقسام (مثلاً: قسم المبيعات 80%) وليس بالأسماء، لأن هدفنا توعية وتدريب الفريق وليس المعاقبة أو التصيد للموظفين.',
+        faq_q5: 'هل التدريب ده بيساعدنا في الامتثال لقانون حماية البيانات المصري؟',
+        faq_a5: 'نعم، قانون حماية البيانات الشخصية المصري رقم 151 لسنة 2020 يلزم الشركات بتأمين بيانات العملاء وتوعية الموظفين بالتعامل السليم معها. تقرير وشهادات "وعي" تعتبر إثباتاً رسمياً ومستنداً قوياً لالتزام شركتك بتدريب كوادرها.',
+
+        book_h2: 'جاهز تقفل أكبر ثغرة أمنية في شركتك؟',
+        book_p: 'احجز جلسة استكشافية مجانية لمدة 15 دقيقة مع أحد مستشارينا، وهنحلل وضع شركتك ونحدد أنسب سيناريوهات لتدريب فريقك.',
+        book_perk1: 'رد فوري خلال ساعات العمل من خبير متخصص',
+        book_perk2: 'نموذج استبيان مجاني لاكتشاف ثغرات موظفيك',
+        book_perk3: 'اتفاقية سرية معلومات (NDA) لضمان أمان بياناتك',
+        book_wa_btn: 'تحدث معنا مباشرة على واتساب',
+
+        form_h3: 'طلب استشارة وجلسة تجريبية',
+        form_sub: 'املا البيانات وهيتواصل معاك خبير أمني لمناقشة احتياجات شركتك:',
+        form_lbl_name: 'اسمك الكريم:',
+        form_ph_name: 'أحمد محمد',
+        form_lbl_phone: 'رقم التليفون / واتساب:',
+        form_ph_phone: '010XXXXXXXX',
+        form_lbl_company: 'اسم الشركة أو المنشأة:',
+        form_ph_company: 'اسم شركتك',
+        form_lbl_sec: 'مجال عمل الشركة:',
+        form_opt_ecom: 'تجارة إلكترونية وشحن',
+        form_opt_med: 'عيادات ومراكز طبية',
+        form_opt_fact: 'مصانع وتوريدات',
+        form_opt_fin: 'محاسبة ومحاماة وماليات',
+        form_opt_other: 'مجال آخر',
+        form_lbl_count: 'عدد الموظفين المتوقع تدريبهم:',
+        form_opt_c1: 'أقل من 15 موظف',
+        form_opt_c2: 'من 15 إلى 40 موظف',
+        form_opt_c3: 'من 40 إلى 100 موظف',
+        form_opt_c4: 'أكثر من 100 موظف',
+        form_submit_btn: 'تأكيد طلب الجلسة التجريبية',
+
+        footer_brand_desc: 'المنصة المصرية الرائدة في جلسات التوعية بالأمن السيبراني وبناء خط الدفاع البشري للشركات الصغيرة والمتوسطة.',
+        footer_col1_h5: 'الخدمة والمنهجية',
+        footer_col2_h5: 'القطاعات المستهدفة',
+        footer_col3_h5: 'تواصل معنا',
+        footer_loc: 'القاهرة · الجيزة · الإسكندرية',
+        footer_wa: 'واتساب الدعم المباشر',
+        footer_copy: 'جميع الحقوق محفوظة © 2026 لمشروع وعي (Waay Security Awareness).',
+        footer_law: 'متوافق مع مبادئ قانون حماية البيانات الشخصية رقم 151 لسنة 2020.',
+
+        sim_res_wrong_title: 'نتيجة الاختيار:',
+        sim_res_correct_title: 'قرار صحيح ومحترف:',
+        calc_unit_emp: 'موظف',
+        calc_unit_currency: 'ج.م'
+      },
+
+      en: {
+        page_title: "Waay | The First Human Defense Layer for Your Company",
+        nav_sim: "Interactive Simulator",
+        nav_meth: "Methodology",
+        nav_rep: "Executive Report",
+        nav_sec: "Industries",
+        nav_price: "Pricing",
+        nav_faq: "FAQ",
+        nav_cta: "Book Demo Session",
+
+        hero_badge: '<span class="dot"></span>Protecting Businesses from Cyber Fraud',
+        hero_title: 'Your Employees Are Your <span class="highlight">First Line of Defense</span>.. Hackers Don\'t Break In, They Log In!',
+        hero_lead: 'Over <strong>90% of cyber breaches in Egypt</strong> start with a rushed click by an employee on WhatsApp or a phishing email. "Waay" trains your non-technical team using realistic everyday scenarios (InstaPay, e-invoicing, CEO fraud), backed by immediate measurable analytics.',
+        hero_cta1: 'Start with a Free Assessment',
+        hero_cta2: 'Calculate Company Risk',
+        trust_1: 'Compliant with Egyptian Data Protection Law 151/2020',
+        trust_2: 'Certified Executive Management Report',
+        trust_3: 'Zero Complex Technical Jargon',
+
+        sim_tab_wa: 'CEO WhatsApp',
+        sim_tab_tax: 'Tax E-Invoice',
+        sim_tab_insta: 'InstaPay / Bank SMS',
+        sim_badge: 'Live Simulation 🔴',
+
+        stat_label_1: 'Of cyber breaches start with social engineering & human error',
+        stat_label_2: 'Average financial loss per cyber fraud incident for Egyptian SMEs',
+        stat_label_3: 'Employee threat detection improvement rate after a single session',
+        stat_num_4: '70-90m',
+        stat_label_4: 'Engaging, focused workshop without disrupting daily operations',
+
+        prob_badge: 'Market Reality',
+        prob_title: 'Why Traditional Cybersecurity Training Fails With Your Employees',
+        prob_subtitle: 'Most awareness programs fail because they are designed for network engineers, not sales, HR, and customer service teams.',
+        prob_c1_title: 'Overly Complex & Theoretical English Content',
+        prob_c1_desc: 'Pre-recorded generic videos with terms like Zero-day and SQL Injection. Employees just run them in the background to finish, gaining zero practical day-to-day skills.',
+        prob_c2_title: 'Disconnected from Local Threats',
+        prob_c2_desc: 'Generic foreign content knows nothing about InstaPay scams, local courier fraud, or fake Egyptian Tax Authority notices that compromise local networks daily.',
+        prob_c3_title: 'Expensive USD Subscriptions with Zero Measured Impact',
+        prob_c3_desc: 'Global SaaS platforms charge thousands of dollars annually, leaving leadership asking: "If a targeted phishing attack hits tomorrow, can our staff actually stop it?".',
+
+        meth_badge: 'Waay Methodology',
+        meth_title: 'A Comprehensive 5-Step Journey to Measure & Transform Team Behavior',
+        meth_subtitle: 'Not just a lecture where we talk and leave... It\'s a complete framework proving measurable behavior change to leadership.',
+        step_1_title: 'Vulnerability Analysis & Survey',
+        step_1_desc: 'A 15-minute alignment call with leadership to audit company tools (Email, WhatsApp, CRM, Drive) and high-risk departments.',
+        step_1_tag: '1 Week Before Session',
+        step_2_title: 'Baseline Pre-Test',
+        step_2_desc: 'Quick situational questions based on real workflows to establish an accurate baseline without singling out or embarrassing anyone.',
+        step_2_tag: 'Measuring Baseline',
+        step_3_title: 'Live Interactive Workshop',
+        step_3_desc: '75-minute hands-on workshop (online or on-site). Engaging interactions every 10 minutes, real case studies, and a 5-scam detection challenge.',
+        step_3_tag: 'Real-Life Scenarios',
+        step_4_title: 'Comprehensive Executive Report',
+        step_4_desc: 'A 5-8 page executive report detailing departmental readiness, risk matrices, and immediate security and legal compliance recommendations.',
+        step_4_tag: 'Documented ROI',
+        step_5_title: '90-Day Follow-Up Drill',
+        step_5_desc: 'A scheduled follow-up simulation drill to measure long-term behavior retention and ensure vigilance has become an everyday habit.',
+        step_5_tag: 'Sustained Retention',
+
+        rep_badge: 'Executive Management Report',
+        rep_title: 'Because Strategic Decisions Rely on Real Data',
+        rep_subtitle: 'Following every session, leadership receives an anonymized report highlighting each department\'s resilience against modern cyber threats.',
+        rep_sample_title: 'Human Layer Security Index Report | Logistics Services Sample (Cairo)',
+        rep_confidential: 'Confidential · Executive Eyes Only',
+        kpi_1_title: 'Pre-Session Awareness',
+        kpi_1_desc: 'Majority fell for urgent payment pressure tactics',
+        kpi_2_title: 'Post-Session Awareness',
+        kpi_2_desc: 'Success rate exceeded the benchmark target (70%)',
+        kpi_3_title: 'Net Growth Rate',
+        kpi_3_desc: 'Doubled team ability to identify social engineering traps',
+        kpi_4_title: 'Suspicion Reporting Rate',
+        kpi_4_desc: 'Employees now proactively report suspicious messages',
+        dept_score_heading: 'Critical Department Readiness Index:',
+        dept_acc: 'Accounting & Finance',
+        dept_acc_status: '94% (Excellent)',
+        dept_hr: 'Human Resources (HR)',
+        dept_hr_status: '88% (Very Good)',
+        dept_sales: 'Sales & Procurement',
+        dept_sales_status: '82% (Secure)',
+        dept_ops: 'Customer Care & Operations',
+        dept_ops_status: '79% (Above Target)',
+        rec_heading: 'Immediate Executive Recommendations:',
+        rec_1: 'Enforce Two-Factor Authentication (2FA) immediately across all WhatsApp Business and company emails.',
+        rec_2: 'Establish a zero-text policy: No funds transfer over 10,000 EGP without direct out-of-band voice verification.',
+        rec_3: 'Designate a clear internal contact point (IT/Ops) to receive and verify suspicious screenshots within minutes.',
+
+        sec_badge: 'Industry-Tailored Content',
+        sec_title: 'Not One-Size-Fits-All.. Real Scenarios from Your Field',
+        sec_subtitle: 'A manufacturing plant is different from a dental clinic or an e-commerce brand. Content is customized to the specific data and money flows you handle.',
+        sec_tab_ecom: 'E-Commerce & Logistics',
+        sec_tab_med: 'Clinics & Healthcare',
+        sec_tab_fact: 'Manufacturing & Supply Chain',
+        sec_tab_corp: 'Legal & Accounting',
+        sec_quote_q: 'Why is this industry specifically vulnerable in Egypt?',
+
+        calc_badge: 'Investment Risk Calculator',
+        calc_title: 'What is the Real Cost of Untrained Staff?',
+        calc_subtitle: 'Estimate potential financial and operational losses resulting from a single social engineering breach.',
+        calc_lbl_emp: 'Number of employees using PCs or smartphones for daily work:',
+        calc_lbl_sec: 'Company Industry / Business Sector:',
+        calc_opt_ecom: 'E-Commerce & Retail',
+        calc_opt_med: 'Healthcare & Medical Centers',
+        calc_opt_fin: 'Financial & Accounting Services',
+        calc_opt_fact: 'Manufacturing & Logistics',
+        calc_opt_serv: 'General Services & Consultancies',
+        calc_disclaimer: '* Calculation is based on Egyptian SME incident benchmarks, downtime costs, and compliance provisions under Law 151/2020.',
+        calc_badge_res: 'Annual Risk Exposure Estimate',
+        calc_lbl_loss: 'Estimated direct financial loss from a single breach:',
+        calc_vs_strong: 'A comprehensive "Waay" awareness session mitigates over 95% of this risk!',
+        calc_vs_span: 'A modest one-time investment protects your brand reputation, client trust, and bottom line.',
+
+        comp_badge: 'Solution Comparison',
+        comp_title: 'Why Choose "Waay" Over Global Platforms?',
+        comp_subtitle: 'The clear difference between a passive checklist course and genuine, lasting human behavior change.',
+        comp_th_aspect: 'Evaluation Criteria',
+        comp_th_global: 'Global SaaS (KnowBe4 / Proofpoint)',
+        comp_th_ppt: 'Generic Pre-recorded Videos & Slides',
+        comp_th_waay: 'Waay Framework ✦',
+        comp_r1_aspect: 'Delivery Language',
+        comp_r1_c1: 'English or awkward machine translation',
+        comp_r1_c2: 'Dry, complex academic tone',
+        comp_r1_c3: '✓ Authentic, engaging Egyptian Arabic or English',
+        comp_r2_aspect: 'Scenarios & Threat Modeling',
+        comp_r2_c1: 'US & European fraud templates',
+        comp_r2_c2: 'Vague, theoretical definitions',
+        comp_r2_c3: '✓ Real local attacks (InstaPay, ETA e-invoices, CEO WhatsApp)',
+        comp_r3_aspect: 'Format & Engagement',
+        comp_r3_c1: 'Boring click-through micro-videos',
+        comp_r3_c2: 'Passive monologue without active participation',
+        comp_r3_c3: '✓ High-energy workshop with challenges every 10 min',
+        comp_r4_aspect: 'Pricing Model',
+        comp_r4_c1: 'Hefty annual USD subscription contracts',
+        comp_r4_c2: 'Fixed one-off course fee',
+        comp_r4_c3: '✓ In Egyptian Pounds with zero lock-in contracts',
+        comp_r5_aspect: 'Executive Reporting',
+        comp_r5_c1: 'Cluttered technical dashboard requiring a CISO',
+        comp_r5_c2: 'Cosmetic attendance certificates only',
+        comp_r5_c3: '✓ 8-page actionable executive report with clear ROI',
+        comp_r6_aspect: 'Post-Session Simulation Drills',
+        comp_r6_c1: 'Complex, server-integration heavy',
+        comp_r6_c2: 'Not available at all',
+        comp_r6_c3: '✓ Controlled 90-day retention drill included',
+
+        price_badge: 'Transparent Pricing',
+        price_title: 'Invest in Employee Awareness in Egyptian Pounds',
+        price_subtitle: 'Tailored for SMEs and growing businesses, with zero vendor lock-in or USD contracts.',
+        p1_title: 'Core Awareness Session',
+        p1_desc: 'Ideal for startups and small teams seeking a fast, impactful baseline training.',
+        p1_amount: 'Single Workshop',
+        p1_meta: 'Up to 15 employees (Online)',
+        p1_f1: '75-minute live interactive session',
+        p1_f2: 'Social engineering & password security fundamentals',
+        p1_f3: 'Instant post-test to measure retention',
+        p1_f4: 'Quick reference cheat-sheet for every employee',
+        p1_btn: 'Choose Core Session',
+
+        p2_featured: 'Most Popular for Companies ✦',
+        p2_title: 'Waay Comprehensive Shield',
+        p2_desc: 'The complete solution to measure and transform real behavior with documented leadership reporting.',
+        p2_amount: 'Complete Program',
+        p2_meta: 'Up to 35 employees (On-site or Online)',
+        p2_f1: '<strong>Pre-session audit & scenario customization</strong> for your industry',
+        p2_f2: '<strong>Baseline Pre-Test + Post-Test</strong> to quantify improvement',
+        p2_f3: '<strong>Executive report (5-8 pages)</strong> with prioritized remediation plan',
+        p2_f4: '<strong>Surprise phishing drill</strong> after 90 days to test retention',
+        p2_f5: 'Certificates of completion & compliance proof for Law 151/2020',
+        p2_btn: 'Book Comprehensive Program',
+
+        p3_title: 'Continuous Corporate Shield',
+        p3_desc: 'For mid-to-large enterprises requiring continuous quarterly updates on emerging scams.',
+        p3_amount: 'Quarterly Retainer',
+        p3_meta: 'For teams of 40+ employees',
+        p3_f1: '4 specialized training sessions throughout the year',
+        p3_f2: 'Monthly unannounced phishing simulations',
+        p3_f3: 'New-hire cybersecurity onboarding modules',
+        p3_f4: 'Direct incident hotline to verify suspicious messages',
+        p3_btn: 'Contact for Enterprise Quote',
+
+        case_badge: 'Real-World Case Studies',
+        case_title: 'How Training Saved Egyptian Companies from Heavy Losses',
+        case_subtitle: 'Real stories of how sharp employee awareness prevented financial and operational disasters.',
+        case_c1_title: 'E-Commerce & Logistics Company',
+        case_c1_sub: 'New Cairo · 28 Employees',
+        case_c1_quote: '"Just two weeks after Waay\'s workshop, our accountant received a WhatsApp message from a spoofed profile mimicking the CEO, asking for an urgent 110,000 EGP vendor transfer. The employee applied the mandatory voice-verification rule we learned, uncovering an attack that would have wiped out our monthly profit!"',
+        case_c1_stat: 'Prevented 110,000 EGP fraudulent wire transfer',
+        case_c2_title: 'Specialized Polyclinics & Labs',
+        case_c2_sub: 'Mohandessin, Giza · 45 Staff & Nurses',
+        case_c2_quote: '"We had a persistent fear of ransomware locking patient records. Waay\'s session was engaging and tailored for receptionists and medical staff. We eliminated password-sharing habits and received an official audit report that protects our reputation."',
+        case_c2_stat: 'Front-desk awareness jumped from 32% to 86%',
+
+        faq_badge: 'Everything You Need to Know',
+        faq_title: 'Frequently Asked Questions',
+        faq_subtitle: 'Clear, honest answers for Egyptian business owners and team leaders.',
+        faq_q1: 'Do employees need any technical background to understand the session?',
+        faq_a1: 'Not at all! The workshop is tailored specifically for non-technical roles (reception, sales, HR, finance, customer care). We use plain, conversational language and realistic examples without any technical jargon or complex IT terms.',
+        faq_q2: 'Is the training held online or on-site at our office?',
+        faq_a2: 'We offer both! For companies in Greater Cairo and Giza, we can deliver the session in-person at your premises, or live interactive online workshops via Zoom or Google Meet with full hands-on simulations.',
+        faq_q3: 'Do you require access to our company servers or internal network?',
+        faq_a3: 'Never! "Waay" specializes exclusively in the human layer of cybersecurity. We never request passwords, network access, or software installation, and we sign a comprehensive Non-Disclosure Agreement (NDA) prior to any engagement.',
+        faq_q4: 'How do you guarantee employee privacy and avoid embarrassing anyone in the report?',
+        faq_a4: 'All individual assessments are completely anonymized in the executive report. Results are aggregated by department (e.g., Sales 80%) rather than individual names, because our goal is team coaching and culture building, not policing.',
+        faq_q5: 'Does this training assist with compliance under the Egyptian Data Protection Law?',
+        faq_a5: 'Yes. Egyptian Personal Data Protection Law No. 151 of 2020 obligates organizations to protect personal customer data and ensure ongoing staff awareness. Our official report and certificates serve as verified documentation of compliance.',
+
+        book_h2: 'Ready to Close Your Company\'s Biggest Security Vulnerability?',
+        book_p: 'Book a free 15-minute exploratory consultation with our cybersecurity specialists to analyze your risks and tailor the right training track for your team.',
+        book_perk1: 'Prompt response during business hours from a dedicated advisor',
+        book_perk2: 'Free pre-session audit questionnaire to detect critical vulnerabilities',
+        book_perk3: 'Binding Non-Disclosure Agreement (NDA) to protect all shared information',
+        book_wa_btn: 'Chat with Us Directly on WhatsApp',
+
+        form_h3: 'Request a Consultation & Demo Session',
+        form_sub: 'Fill in your details and a security consultant will reach out to discuss your company\'s needs:',
+        form_lbl_name: 'Full Name:',
+        form_ph_name: 'e.g. Tarek Mansour',
+        form_lbl_phone: 'Phone / WhatsApp Number:',
+        form_ph_phone: '+20 10X XXX XXXX',
+        form_lbl_company: 'Company Name:',
+        form_ph_company: 'Your Company Ltd.',
+        form_lbl_sec: 'Industry Sector:',
+        form_opt_ecom: 'E-Commerce & Logistics',
+        form_opt_med: 'Clinics & Healthcare',
+        form_opt_fact: 'Manufacturing & Supply Chain',
+        form_opt_fin: 'Accounting & Legal Services',
+        form_opt_other: 'Other Sector',
+        form_lbl_count: 'Estimated Number of Employees:',
+        form_opt_c1: 'Under 15 employees',
+        form_opt_c2: '15 to 40 employees',
+        form_opt_c3: '40 to 100 employees',
+        form_opt_c4: 'More than 100 employees',
+        form_submit_btn: 'Confirm & Request Demo Session',
+
+        footer_brand_desc: 'Egypt\'s leading cybersecurity awareness platform empowering the human defense layer for SMEs and growing enterprises.',
+        footer_col1_h5: 'Services & Methodology',
+        footer_col2_h5: 'Target Industries',
+        footer_col3_h5: 'Contact Us',
+        footer_loc: 'Cairo · Giza · Alexandria',
+        footer_wa: 'Direct WhatsApp Support',
+        footer_copy: 'All Rights Reserved © 2026 Waay Security Awareness.',
+        footer_law: 'Compliant with Egyptian Personal Data Protection Law No. 151 of 2020.',
+
+        sim_res_wrong_title: 'Decision Outcome:',
+        sim_res_correct_title: 'Correct & Professional Decision:',
+        calc_unit_emp: 'employees',
+        calc_unit_currency: 'EGP'
+      }
+    };
+
+    // ──────────────────────────────────────────
+    // 1. Interactive Multi-Scenario Simulator
+    // ──────────────────────────────────────────
+    const scenarios = {
+      ar: {
+        whatsapp: {
+          avatar: 'م',
+          sender: 'واتساب: م/ أحمد (المدير التنفيذي)',
+          meta: '⚠️ رقم غير مسجل في جهات الاتصال',
+          boxClass: 'sim-is-wa',
+          question: 'لو موظف الحسابات في شركتك جاله الموقف ده.. هيتصرف إزاي؟',
+          optWrong: 'يحوّل المبلغ بسرعة عشان "المدير مستعجل"',
+          optCorrect: 'يتصل بالمدير على نمرته المعتادة ويتأكد',
+          content: `
+            <div class="wa-chat-date">اليوم</div>
+            <div class="wa-security-banner">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>🔒 تنبيه واتساب: هذا الرقم غير مسجل بجهات الاتصال. تجنّب مشاركة أموال أو بيانات سرية.</span>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">رسالة 1</span>
+                  <span class="wa-tactic-tag">تبرير الرقم المجهول وجس النبض</span>
+                </div>
+                <p class="wa-text">صباح الخير يا منى، ده رقمي التاني، تليفوني الأساسي فيه مشكلة. إنتي فاضية؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:40 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>منى (مسؤولة الحسابات)</span>
+                </div>
+                <p class="wa-text">صباح النور يا باشمهندس أحمد. أيوة مع حضرتك يا فندم، خير؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:41 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">رسالة 2</span>
+                  <span class="wa-tactic-tag danger">فخ مالي + استعجال مفتعل ⚡</span>
+                </div>
+                <p class="wa-text">أنا في اجتماع برة ومش هعرف أتكلم فون. محتاج تحوّلي <strong class="highlight-money">65,000 ج.م</strong> على إنستاباي لمورد الخامات عشان نلحق الشحنة، <span class="highlight-urgency">ضروري حالًا</span>. هبعتلك أصل الفاتورة أول ما أرجع المكتب. متتأخريش!</p>
+                <div class="wa-bubble-footer">
+                  <span>08:42 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>رد منى بسؤال (محاولة اتباع اللائحة)</span>
+                </div>
+                <p class="wa-text">تمام يا فندم، بس السيستم محتاج أمر شراء معتمد أو الفاتورة الأول قبل الصرف، وممكن نتأكد من حساب المورد؟</p>
+                <div class="wa-bubble-footer">
+                  <span>08:43 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble urgent">
+                <div class="wa-bubble-label danger">
+                  <span class="wa-badge-pill danger">رسالة 3 (بعد ردها بسؤال)</span>
+                  <span class="wa-tactic-tag danger">ترهيب وكسر الإجراءات بالسلطة 🚨</span>
+                </div>
+                <p class="wa-text">مش وقت أسئلة دلوقتي، الشحنة هتتأخر وهنخسر العميل. نفذي وأنا هتحمل مسؤولية القرار.!</p>
+                <div class="wa-bubble-footer">
+                  <span>08:44 ص</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+          `,
+          wrongFeedback: '🚨 ده فخ نصب خطير ومنتشر جداً بمصر (CEO Fraud)!<br>المحتال استغل 3 أسلحة: استعجال مقصود، وادعاء إنه في اجتماع لمنع الاتصال، وطلب كسر الإجراءات المالية. التحويل ده بيضيع الفلوس للأبد ومفيش بنك يقدر يرجعه!',
+          correctFeedback: '✅ تصرف ممتاز واحترافي!<br>الاتصال بالمدير على نمرته المعتادة بيحمي الشركة. في جلسات "وعي" بنعلم فريقك قاعدة القناة البديلة المزدوجة (Out-of-band Verification) عشان محدش يقع في الضغط ده أبداً.'
+        },
+        tax: {
+          avatar: 'ض',
+          sender: 'إيميل: منظومة الفاتورة الإلكترونية - مصلحة الضرائب',
+          meta: '⚠️ عنوان المرسل الحقيقي: eta-gov-eg@mailer-server12.com',
+          boxClass: 'sim-is-email',
+          question: 'لو موظف في شركتك وصله الإيميل ده على بريده.. هيتصرف إزاي؟',
+          optWrong: 'يحمّل ويفتح ملف الفاتورة المرفق (ZIP) فوراً للتأكد',
+          optCorrect: 'يفحص دومين المرسل ويتواصل مع المحاسب دون فتح المرفق',
+          content: `
+            <div class="sim-email-header">
+              <div class="sim-email-row"><strong>الموضوع:</strong> <span style="color:var(--danger);font-weight:700;">⚠️ إشعار عاجل: مخالفة وغرامة ضريبية فورية 120,000 ج.م</span></div>
+              <div class="sim-email-row"><strong>المرسل:</strong> <span>منظومة الفاتورة الإلكترونية &lt;<span style="color:var(--danger);font-weight:700;">eta-gov-eg@mailer-server12.com</span>&gt;</span></div>
+              <div class="sim-email-row"><strong>إلى:</strong> <span>accounts@yourcompany.eg</span></div>
+            </div>
+            <p style="margin:0 0 10px 0;line-height:1.6;">السادة شركة (... الموقرة)، نخطركم بوجود مخالفة وتهرب في الإقرار الضريبي للربع الأخير مع غرامة فورية قدرها 120,000 ج.م. يرجى تحميل ملف الفاتورة المرفق ومراجعته خلال 24 ساعة لتجنب الحجز التنفيذي.</p>
+            <div class="sim-attachment-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+              <div>
+                <div>ملف مرفق عالي الخطورة: <strong>Tax_Report_2026.zip</strong> (1.4 MB)</div>
+                <small style="opacity:0.85;">⚠️ برمجية فدية خبيثة (Ransomware) لتشفير السيرفرات</small>
+              </div>
+            </div>
+          `,
+          wrongFeedback: '🚨 كارثة Ransomware وشيكة!<br>الملف المضغوط يحتوي على برمجية فدية أو حصان طروادة بيشفر ملفات السيرفر والعملاء بالكامل. والاسم يبدو حكومياً لكن الدومين الحقيقي من سيرفر احتيالي مجهول.',
+          correctFeedback: '✅ قرار عبقري أنقذ سيرفرات الشركة!<br>فحص الإيميل الحقيقي وعدم فتح المرفقات مجهولة المصدر هو أول خطوة عملية بنعلمها للموظفين في نشاط كشف الإيميلات المزيفة.'
+        },
+        instapay: {
+          avatar: 'B',
+          sender: 'رسالة SMS: خدمة عملاء البنك / InstaPay',
+          meta: '⚠️ مرسل من نمرة محمول عادية مش Short-code',
+          boxClass: 'sim-is-sms',
+          question: 'لو موظف وصلته رسالة الـ SMS دي على تليفونه.. هيتصرف إزاي؟',
+          optWrong: 'يضغط الرابط فوراً ويدخل رمز الـ OTP لمنع الإيقاف',
+          optCorrect: 'يتجاهل الرسالة ويتأكد من التطبيق الرسمي أو الهاتف المعتمد',
+          content: `
+            <div style="font-size:0.82rem;color:var(--danger);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+              <span>⚠️ تحذير: الرسالة مرسلة من نمرة شخصية (+20 10 2345 6789) وليس معرف البنك</span>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border-light);border-radius:10px;padding:14px;box-shadow:var(--shadow-sm);">
+              <p style="margin:0 0 10px 0;line-height:1.6;">عميلنا العزيز، تم رصد محاولة دخول مشبوهة على حسابك وتجميد خدمة الدفع اللحظي. لتأكيد وتفعيل بطاقتك اضغط الرابط التالي وأدخل رمز التحقق (OTP) المرسل لهاتفك:</p>
+              <div style="background:var(--danger-light);color:var(--danger);padding:8px 12px;border-radius:6px;font-family:monospace;direction:ltr;text-align:left;font-weight:700;font-size:0.85rem;word-break:break-all;">
+                https://instapay-portal-verify.online
+              </div>
+              <div class="sim-meta" style="margin-top:8px;"><span>اليوم 11:20 ص</span></div>
+            </div>
+          `,
+          wrongFeedback: '🚨 سرقة حساب بنكي مكتملة الأركان!<br>البنوك وانستاباي لا تطلب أبداً رمز الـ OTP أو الدخول على روابط خارجية. الرابط المعروض موقع وهمي يسرق كل أرصدة البطاقة في ثوانٍ.',
+          correctFeedback: '✅ قرار سليم 100%! البنك لا يطلب بيانات سرية عبر SMS.<br>الجلسة بتخلي موظفيك يفرقوا بثوانٍ بين روابط المواقع الرسمية والمواقع المزيفة الشبيهة.'
+        }
+      },
+      en: {
+        whatsapp: {
+          avatar: 'A',
+          sender: 'WhatsApp: Eng. Ahmed (CEO)',
+          meta: '⚠️ Unknown Sender (Not in contacts)',
+          boxClass: 'sim-is-wa',
+          question: 'If your company\'s accountant faced this situation.. what should she do?',
+          optWrong: 'Transfer the money quickly because "the CEO is rushing"',
+          optCorrect: 'Call the CEO on his known official number to verify',
+          content: `
+            <div class="wa-chat-date">Today</div>
+            <div class="wa-security-banner">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>🔒 WhatsApp Alert: Sender is not in your contacts. Never share funds or sensitive information.</span>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">Message 1</span>
+                  <span class="wa-tactic-tag">Justifying unknown number & testing response</span>
+                </div>
+                <p class="wa-text">Good morning Mona, this is my secondary number, my main phone is having issues. Are you available?</p>
+                <div class="wa-bubble-footer">
+                  <span>08:40 AM</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>Mona (Accounts Specialist)</span>
+                </div>
+                <p class="wa-text">Good morning Eng. Ahmed. Yes, I'm available, how can I help?</p>
+                <div class="wa-bubble-footer">
+                  <span>08:41 AM</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label">
+                  <span class="wa-badge-pill">Message 2</span>
+                  <span class="wa-tactic-tag danger">Financial trap + fabricated urgency ⚡</span>
+                </div>
+                <p class="wa-text">I'm in an external meeting and can't take calls. I need you to transfer <strong class="highlight-money">65,000 EGP</strong> via InstaPay to the raw materials supplier to catch the shipment, <span class="highlight-urgency">urgently now</span>. I'll send the original invoice once back at the office. Don't delay!</p>
+                <div class="wa-bubble-footer">
+                  <span>08:42 AM</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row outgoing">
+              <div class="wa-bubble">
+                <div class="wa-bubble-label outgoing-label">
+                  <span>Mona's question (Attempting to follow policy)</span>
+                </div>
+                <p class="wa-text">Understood sir, but our accounting policy requires an approved PO or invoice before disbursement. Can we verify the supplier's account first?</p>
+                <div class="wa-bubble-footer">
+                  <span>08:43 AM</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wa-row incoming">
+              <div class="wa-bubble urgent">
+                <div class="wa-bubble-label danger">
+                  <span class="wa-badge-pill danger">Message 3 (After her pushback)</span>
+                  <span class="wa-tactic-tag danger">Intimidation & policy bypass via authority 🚨</span>
+                </div>
+                <p class="wa-text">No time for questions now, the shipment will be delayed and we'll lose the client. Execute immediately and I will take full responsibility.!</p>
+                <div class="wa-bubble-footer">
+                  <span>08:44 AM</span>
+                  <span class="wa-checks">✓✓</span>
+                </div>
+              </div>
+            </div>
+          `,
+          wrongFeedback: '🚨 Severe CEO Fraud incident trap!<br>The attacker deployed 3 tactics: manufactured urgency, claiming to be in a meeting to prevent voice calls, and demanding bypassing financial controls. Once transferred via instant payment, the funds are permanently lost!',
+          correctFeedback: '✅ Excellent & professional decision!<br>Calling the executive on his verified number protects the company. In "Waay" workshops, we train your team on strict Out-of-band Verification so no employee falls for executive impersonation.'
+        },
+        tax: {
+          avatar: 'T',
+          sender: 'Email: Egyptian Tax Authority - E-Invoicing System',
+          meta: '⚠️ Actual Sender: eta-gov-eg@mailer-server12.com',
+          boxClass: 'sim-is-email',
+          question: 'If an employee in your company received this email.. how should they react?',
+          optWrong: 'Download and extract the attached invoice (ZIP) immediately to check',
+          optCorrect: 'Inspect sender domain & check with the accountant without opening attachment',
+          content: `
+            <div class="sim-email-header">
+              <div class="sim-email-row"><strong>Subject:</strong> <span style="color:var(--danger);font-weight:700;">⚠️ URGENT: Tax Violation Notice & Immediate Fine 120,000 EGP</span></div>
+              <div class="sim-email-row"><strong>From:</strong> <span>Egyptian E-Invoice Portal &lt;<span style="color:var(--danger);font-weight:700;">eta-gov-eg@mailer-server12.com</span>&gt;</span></div>
+              <div class="sim-email-row"><strong>To:</strong> <span>accounts@yourcompany.eg</span></div>
+            </div>
+            <p style="margin:0 0 10px 0;line-height:1.6;">Dear Company Management, Please be advised of an unfiled e-invoice violation for the latest quarter, carrying an immediate 120,000 EGP fine. Please download and review the attached invoice within 24 hours to avoid judicial execution.</p>
+            <div class="sim-attachment-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+              <div>
+                <div>High Risk Attachment: <strong>Tax_Report_2026.zip</strong> (1.4 MB)</div>
+                <small style="opacity:0.85;">⚠️ Malicious Ransomware payload designed to encrypt company servers</small>
+              </div>
+            </div>
+          `,
+          wrongFeedback: '🚨 Imminent Ransomware Catastrophe!<br>The compressed ZIP file contains ransomware or a Trojan horse that completely encrypts company databases and servers. While the sender display name looks governmental, the actual email domain is an unauthorized spoofed address.',
+          correctFeedback: '✅ Smart decision that saved company servers!<br>Checking the true sender domain and refusing to open unknown archives is the fundamental skill we teach in our phishing detection workshops.'
+        },
+        instapay: {
+          avatar: 'B',
+          sender: 'SMS: Bank Customer Support / InstaPay',
+          meta: '⚠️ Sent from a personal mobile number, not official bank sender ID',
+          boxClass: 'sim-is-sms',
+          question: 'If an employee received this SMS on their phone.. what should they do?',
+          optWrong: 'Click the link immediately and submit OTP to prevent account suspension',
+          optCorrect: 'Ignore message and verify directly via official banking app or customer hotline',
+          content: `
+            <div style="font-size:0.82rem;color:var(--danger);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px;">
+              <span>⚠️ Warning: Sent from personal phone (+20 10 2345 6789) instead of bank short-code</span>
+            </div>
+            <div style="background:var(--surface);border:1px solid var(--border-light);border-radius:10px;padding:14px;box-shadow:var(--shadow-sm);">
+              <p style="margin:0 0 10px 0;line-height:1.6;">Dear customer, suspicious login activity was detected on your account and instant payment services have been temporarily suspended. To reactivate your card, visit the link below and enter your One-Time Password (OTP):</p>
+              <div style="background:var(--danger-light);color:var(--danger);padding:8px 12px;border-radius:6px;font-family:monospace;direction:ltr;text-align:left;font-weight:700;font-size:0.85rem;word-break:break-all;">
+                https://instapay-portal-verify.online
+              </div>
+              <div class="sim-meta" style="margin-top:8px;"><span>Today 11:20 AM</span></div>
+            </div>
+          `,
+          wrongFeedback: '🚨 Complete bank credential theft!<br>Official banks and InstaPay will NEVER ask for your OTP or password over SMS or third-party links. The link leads to a spoofed portal designed to drain card balances within seconds.',
+          correctFeedback: '✅ 100% Correct Protocol! Banks never solicit credentials via SMS.<br>Our interactive sessions teach your employees to spot fraudulent domains and typosquatting in seconds.'
+        }
+      }
+    };
+
+    function switchSimScenario(key, btn) {
+      if (key) currentScenarioKey = key;
+      const langScenarios = scenarios[currentLang] || scenarios.ar;
+      const sc = langScenarios[currentScenarioKey];
+      if (!sc) return;
+
+      const avatarEl = document.getElementById('simAvatar');
+      avatarEl.innerHTML = sc.avatar + (currentScenarioKey === 'whatsapp' ? '<span class="sim-online-dot"></span>' : '');
+      document.getElementById('simSenderName').innerText = sc.sender;
+      document.getElementById('simSenderMeta').innerText = sc.meta;
+
+      const contentBox = document.getElementById('simContent');
+      contentBox.className = 'sim-message-box ' + (sc.boxClass || 'sim-is-wa');
+      contentBox.innerHTML = sc.content;
+
+      // Update question and options
+      const qEl = document.getElementById('simQuestion');
+      if (qEl && sc.question) qEl.innerText = sc.question;
+      const optW = document.getElementById('simOptWrong');
+      if (optW && sc.optWrong) optW.innerText = sc.optWrong;
+      const optC = document.getElementById('simOptCorrect');
+      if (optC && sc.optCorrect) optC.innerText = sc.optCorrect;
+
+      const resBox = document.getElementById('simResultBox');
+      resBox.style.display = 'none';
+      resBox.className = 'sim-result';
+
+      // Update pills
+      const pills = document.querySelectorAll('.sim-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      const activeBtn = btn || document.querySelector(`.sim-pill[data-scenario="${currentScenarioKey}"]`);
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    function checkSimAnswer(ans) {
+      const resBox = document.getElementById('simResultBox');
+      const langScenarios = scenarios[currentLang] || scenarios.ar;
+      const sc = langScenarios[currentScenarioKey];
+      const langPack = I18N[currentLang] || I18N.ar;
+      if (ans === 'wrong') {
+        resBox.className = 'sim-result danger';
+        resBox.innerHTML = `<strong>${langPack.sim_res_wrong_title}</strong> ${sc.wrongFeedback}`;
+      } else {
+        resBox.className = 'sim-result success';
+        resBox.innerHTML = `<strong>${langPack.sim_res_correct_title}</strong> ${sc.correctFeedback}`;
+      }
+      resBox.style.display = 'block';
+    }
+
+    // ──────────────────────────────────────────
+    // 2. Theme Toggle (Light / Dark)
+    // ──────────────────────────────────────────
+    const themeBtn = document.getElementById('themeToggleBtn');
+    const rootEl = document.documentElement;
+
+    function initTheme() {
+      const saved = localStorage.getItem('waay_theme') || 'light';
+      rootEl.setAttribute('data-theme', saved);
+      updateThemeIcon(saved);
+    }
+
+    function toggleTheme() {
+      const current = rootEl.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      rootEl.setAttribute('data-theme', next);
+      localStorage.setItem('waay_theme', next);
+      updateThemeIcon(next);
+    }
+
+    function updateThemeIcon(t) {
+      themeBtn.innerHTML = t === 'dark'
+        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+
+    themeBtn.addEventListener('click', toggleTheme);
+    initTheme();
+
+    // ──────────────────────────────────────────
+    // 3. Sector Switcher
+    // ──────────────────────────────────────────
+    const sectorData = {
+      ar: {
+        ecommerce: {
+          title: 'التجارة الإلكترونية والخدمات اللوجستية',
+          desc: 'شركات التجارة والشحن في مصر معرضة يومياً لاختراق حسابات الإعلانات وسرقة قواعد بيانات العملاء والاحتيال على بوابات الدفع.',
+          threats: [
+            'روابط شكاوى وهمية على واتساب بتسرق حساب فيسبوك بيزنس مانجر بالـ Pixel بتاعه.',
+            'إيميلات بوالص شحن مزيفة بامتدادات ملغومة (.exe / .zip) بتشفر ملفات السيرفر.',
+            'عمليات نصب انستاباي بتأكيد إيصالات تحويل غير حقيقية معدلة بالفوتوشوب.'
+          ],
+          quote: 'موظف خدمة العملاء أو المبيعات بيكون تحت ضغط وسرعة رد على مئات العملاء يومياً، المحتال بيستغل نقطة "الاستعجال" عشان يخليه يفتح لينك أو يبعت بيانات حساسة في لحظة غفلة.'
+        },
+        medical: {
+          title: 'العيادات والمراكز الطبية والمستشفيات',
+          desc: 'بيانات المرضى والفحوصات والتحاليل من أثمن البيانات وتخضع لمسؤولية قانونية صارمة وفق قانون حماية البيانات المصري رقم 151 لسنة 2020.',
+          threats: [
+            'تسريب بيانات وسجلات المرضى عبر حسابات واتساب الاستقبال المشتركة.',
+            'ملفات تحاليل مرسلة من مرضى وهميين تحتوي على برمجيات فدية تشفر نظام الحجوزات.',
+            'سرقة أرصدة أجهزة نقاط البيع (POS) عبر برمجيات خبيثة يتم تثبيتها عن بعد.'
+          ],
+          quote: 'في القطاع الطبي، أي تسريب لبيانات المريض يدمر سمعة المركز للأبد ويخضع الإدارة لعقوبات قانونية فورية. تدريب موظفي الاستقبال يمثل 90% من حماية هذه البيانات.'
+        },
+        factories: {
+          title: 'المصانع والتوريدات وشركات المقاولات',
+          desc: 'المعاملات المالية الكبيرة مع الموردين وأوامر التوريد هي الهدف الأكبر لعصابات النصب وانتحال الإيميلات.',
+          threats: [
+            'اختراق إيميل أحد الموردين وتغيير بيانات الآيبان (IBAN) في الفواتير الرسمية قبل الصرف.',
+            'أوامر شراء وهمية مرفقة بملفات إكسيل ملغومة بـ Macro خبيث يخترق شبكة المصنع.',
+            'انتحال صفة هيئات تفتيش أو تراخيص صناعية لطلب بيانات مالية وعمالية سرية.'
+          ],
+          quote: 'خطأ موظف مشتريات واحد في تحويل دفعة مورد لحساب محتال قد يوقف خط إنتاج بالكامل ويكبد المصنع مئات الآلاف من الجنيهات.'
+        },
+        corporate: {
+          title: 'مكاتب المحاماة والمحاسبة والخدمات المالية',
+          desc: 'المستندات المالية والعقود وبطاقات الضرائب تتطلب أعلى معايير الخصوصية لحماية أسرار العملاء.',
+          threats: [
+            'إيميلات تصيد تنتحل مصلحة الضرائب أو التأمينات الاجتماعية لسرقة كلمات المرور.',
+            'استهداف الشركاء بروابط مفخخة تتيح التجسس على كشوف الحسابات وعقود الاستحواذ.',
+            'استغلال باسوردات بسيطة مكررة لاختراق بريد الموظفين والاطلاع على المراسلات السرية.'
+          ],
+          quote: 'ثقة العميل في مكتبك المحاسبي أو القانوني هي رأس مالك الحقيقي. توفير إثبات تدريب الموظفين يعزز مصداقيتك أمام كبرى الشركات والشركاء.'
+        }
+      },
+      en: {
+        ecommerce: {
+          title: 'E-Commerce & Logistics',
+          desc: 'Egyptian online retail and shipping companies face daily attempts to hijack Facebook Business Manager ad accounts, steal customer databases, and spoof payment gateways.',
+          threats: [
+            'Fake WhatsApp dispute links that hijack Facebook Business Manager along with Pixel assets.',
+            'Spoofed shipping airway bills with malicious extensions (.exe / .zip) encrypting local servers.',
+            'InstaPay fraud using falsified, Photoshopped bank transfer slips to release goods.'
+          ],
+          quote: 'Customer support and sales staff are under extreme pressure to reply instantly to hundreds of daily chats. Attackers exploit this urgency to make them open malicious links in an unguarded moment.'
+        },
+        medical: {
+          title: 'Clinics, Medical Centers & Hospitals',
+          desc: 'Patient records, lab results, and diagnostic files are highly sensitive assets subject to strict legal liability under Egyptian Personal Data Protection Law No. 151 of 2020.',
+          threats: [
+            'Patient record leaks via shared reception WhatsApp Web accounts.',
+            'Fake patient lab reports containing ransomware payloads that freeze electronic appointment systems.',
+            'Theft of POS terminal balances through remote-access malware.'
+          ],
+          quote: 'In healthcare, a single patient data leak permanently destroys the clinic\'s reputation and exposes leadership to legal liability. Training front-desk staff accounts for 90% of data defense.'
+        },
+        factories: {
+          title: 'Manufacturing, Supply Chain & Contracting',
+          desc: 'High-value financial transactions with material suppliers and large procurement POs are prime targets for invoice fraud and email compromise.',
+          threats: [
+            'Compromised vendor emails altering IBAN / bank account details on official invoices prior to disbursement.',
+            'Spoofed purchase orders with macro-enabled Excel sheets compromising plant networks.',
+            'Impersonation of industrial regulatory or licensing authorities requesting sensitive financial and payroll data.'
+          ],
+          quote: 'A single procurement officer\'s mistake in routing a supplier payment to a fraudster can halt production lines and inflict hundreds of thousands of pounds in damages.'
+        },
+        corporate: {
+          title: 'Law Firms, Accounting & Financial Services',
+          desc: 'Confidential financial statements, acquisition contracts, and tax filings demand the highest privacy standards to safeguard client secrets.',
+          threats: [
+            'Phishing emails impersonating the Egyptian Tax Authority or Social Insurance to steal portal credentials.',
+            'Targeted malicious links sent to partners to spy on audited statements and M&A contracts.',
+            'Exploitation of weak, reused passwords to access corporate mailboxes and leak sensitive communications.'
+          ],
+          quote: 'Client trust is the core capital of any legal or accounting firm. Demonstrating certified employee security awareness strengthens credibility with major corporate partners.'
+        }
+      }
+    };
+
+    function setSector(key) {
+      if (key) currentSectorKey = key;
+      const langSectors = sectorData[currentLang] || sectorData.ar;
+      const s = langSectors[currentSectorKey];
+      if (!s) return;
+
+      document.getElementById('sectorTitle').innerText = s.title;
+      document.getElementById('sectorDesc').innerText = s.desc;
+      document.getElementById('sectorQuote').innerText = s.quote;
+
+      const threatsList = document.getElementById('sectorThreats');
+      threatsList.innerHTML = s.threats.map(t => `
+        <li class="sector-threat-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>${t}</span>
+        </li>
+      `).join('');
+
+      const btns = document.querySelectorAll('.sector-btn');
+      btns.forEach(b => {
+        if (b.getAttribute('data-sector-btn') === currentSectorKey) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+    }
+
+    // ──────────────────────────────────────────
+    // 4. ROI & Risk Calculator Logic
+    // ──────────────────────────────────────────
+    function updateCalculator() {
+      const empRangeEl = document.getElementById('empRange');
+      if (!empRangeEl) return;
+      const emp = parseInt(empRangeEl.value);
+      const factor = parseFloat(document.getElementById('calcSector').value);
+      const langPack = I18N[currentLang] || I18N.ar;
+
+      document.getElementById('empVal').innerText = emp + ' ' + (langPack.calc_unit_emp || 'موظف');
+
+      // Base calculation formula reflecting Egyptian SME typical exposure
+      const baseRiskPerEmployee = 5800; // in EGP
+      const total = Math.round(emp * baseRiskPerEmployee * factor);
+      const locale = currentLang === 'en' ? 'en-US' : 'ar-EG';
+      document.getElementById('lossAmount').innerText = total.toLocaleString(locale) + ' ' + (langPack.calc_unit_currency || 'ج.م');
+    }
+
+    // ──────────────────────────────────────────
+    // 5. FAQ Accordion Logic
+    // ──────────────────────────────────────────
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const ans = item.querySelector('.faq-answer');
+        const isActive = item.classList.contains('active');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('active');
+          other.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          ans.style.maxHeight = ans.scrollHeight + 30 + 'px';
+        }
+      });
+    });
+
+    // ──────────────────────────────────────────
+    // 6. Language Switcher (setLanguage / toggleLanguage)
+    // ──────────────────────────────────────────
+    function setLanguage(lang) {
+      currentLang = (lang === 'en') ? 'en' : 'ar';
+      const isEn = (currentLang === 'en');
+      rootEl.setAttribute('lang', currentLang);
+      rootEl.setAttribute('dir', isEn ? 'ltr' : 'rtl');
+
+      const langBtnText = document.getElementById('langBtnText');
+      if (langBtnText) {
+        langBtnText.innerText = isEn ? 'العربية' : 'English';
+      }
+
+      const pack = I18N[currentLang];
+      if (pack && pack.page_title) {
+        document.title = pack.page_title;
+      }
+
+      // Update text in elements with data-i18n
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (pack && pack[key] !== undefined) {
+          el.innerHTML = pack[key];
+        }
+      });
+
+      // Update placeholders with data-i18n-ph
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        if (pack && pack[key] !== undefined) {
+          el.setAttribute('placeholder', pack[key]);
+        }
+      });
+
+      // Re-render dynamic scenarios, sectors, and calculator
+      switchSimScenario(currentScenarioKey);
+      setSector(currentSectorKey);
+      updateCalculator();
+
+      try {
+        localStorage.setItem('waay_lang', currentLang);
+      } catch (e) {
+        console.warn('LocalStorage error:', e);
+      }
+    }
+
+    function toggleLanguage() {
+      const next = (currentLang === 'ar') ? 'en' : 'ar';
+      setLanguage(next);
+    }
+
+    // ──────────────────────────────────────────
+    // 7. Booking Form Submit & Excel Integration
+    // ──────────────────────────────────────────
+    const BACKEND_CONFIG = {
+      // 1. الخيار المحلي (سيرفر بايثون المرفق backend.py):
+      //    'http://localhost:5000/api/leads'
+      // 2. أو الخيار السحابي (Google Sheets Webhook):
+      ENDPOINT_URL: 'http://localhost:5000/api/leads',
+
+      // تحويل العميل تلقائياً إلى واتساب لتأكيد الموعد بعد حفظ البيانات في الإكسيل
+      ENABLE_WHATSAPP_REDIRECT: true,
+      WHATSAPP_NUMBER: '201000000000'
+    };
+
+    async function handleFormSubmit() {
+      const nameEl = document.getElementById('fName');
+      const phoneEl = document.getElementById('fPhone');
+      const companyEl = document.getElementById('fCompany');
+      const sectorEl = document.getElementById('fSector');
+      const countEl = document.getElementById('fCount');
+      const submitBtn = document.getElementById('fSubmitBtn');
+      const msgBox = document.getElementById('formMsg');
+
+      const name = nameEl.value.trim();
+      const phone = phoneEl.value.trim();
+      const company = companyEl.value.trim();
+      const sector = sectorEl.options[sectorEl.selectedIndex].text;
+      const count = countEl.options[countEl.selectedIndex].text;
+      const isEn = (currentLang === 'en');
+
+      if (!name || !phone || !company) {
+        msgBox.className = 'form-msg-box error';
+        msgBox.style.display = 'block';
+        msgBox.innerHTML = isEn
+          ? '⚠️ Please complete all required fields (Name, Phone, Company Name).'
+          : '⚠️ يرجى استكمال جميع البيانات المطلوبة (الاسم، الهاتف، اسم الشركة).';
+        return;
+      }
+
+      // إظهار حالة التحميل وتعطيل الزر مؤقتاً لمنع الإرسال المكرر
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.style.opacity = '0.7';
+      submitBtn.innerHTML = isEn
+        ? '<span>⏳ Recording your request into Excel...</span>'
+        : '<span>⏳ جاري تسجيل طلبك وحفظ البيانات في الإكسيل...</span>';
+
+      msgBox.className = 'form-msg-box loading';
+      msgBox.style.display = 'block';
+      msgBox.innerHTML = isEn
+        ? 'Submitting details and confirming your session...'
+        : 'جاري إرسال البيانات وتأكيد الحجز...';
+
+      // تجهيز توقيت محلي دقيق
+      const now = new Date();
+      const timeLocale = isEn ? 'en-US' : 'ar-EG';
+      const cairoTime = now.toLocaleString(timeLocale, {
+        timeZone: 'Africa/Cairo',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      });
+
+      const leadData = {
+        timestamp: cairoTime,
+        name: name,
+        phone: phone,
+        company: company,
+        sector: sector,
+        count: count,
+        status: isEn ? 'New Lead 🔴' : 'طلب جديد 🔴'
+      };
+
+      // حفظ نسخة احتياطية في المتصفح محلياً (localStorage) لضمان عدم ضياع أي عميل
+      try {
+        const localLeads = JSON.parse(localStorage.getItem('waay_leads_backup') || '[]');
+        localLeads.push(leadData);
+        localStorage.setItem('waay_leads_backup', JSON.stringify(localLeads));
+      } catch (e) {
+        console.warn('LocalStorage error:', e);
+      }
+
+      // إرسال البيانات إلى السيرفر (Google Apps Script أو Python Backend)
+      if (BACKEND_CONFIG.ENDPOINT_URL && !BACKEND_CONFIG.ENDPOINT_URL.includes('YOUR_GOOGLE_SHEET')) {
+        try {
+          const isGoogleScript = BACKEND_CONFIG.ENDPOINT_URL.includes('script.google.com');
+          if (isGoogleScript) {
+            await fetch(BACKEND_CONFIG.ENDPOINT_URL, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify(leadData)
+            });
+          } else {
+            await fetch(BACKEND_CONFIG.ENDPOINT_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(leadData)
+            });
+          }
+        } catch (err) {
+          console.warn('Backend server note:', err.message);
+        }
+      }
+
+      // إظهار رسالة النجاح
+      msgBox.className = 'form-msg-box success';
+      if (isEn) {
+        msgBox.innerHTML = `
+          <div style="font-size:1.05rem; margin-bottom:4px;">✅ <strong>Thank you ${name}! Your request has been logged successfully to Excel.</strong></div>
+          <div>Consultation session booked for (<strong>${company}</strong>). Our security specialist will reach out to you at (<strong>${phone}</strong>).</div>
+          ${BACKEND_CONFIG.ENABLE_WHATSAPP_REDIRECT ? '<div style="font-size:0.82rem; margin-top:8px; opacity:0.9;">Opening WhatsApp now to confirm your appointment directly... 📲</div>' : ''}
+        `;
+      } else {
+        msgBox.innerHTML = `
+          <div style="font-size:1.05rem; margin-bottom:4px;">✅ <strong>شكراً يا أ/ ${name}! تم استلام طلبك وإضافته لشيت الإكسيل بنجاح.</strong></div>
+          <div>تم حجز الجلسة الاستشارية لشركة (<strong>${company}</strong>)، وسيتواصل معك أحد خبرائنا على رقم (<strong>${phone}</strong>).</div>
+          ${BACKEND_CONFIG.ENABLE_WHATSAPP_REDIRECT ? '<div style="font-size:0.82rem; margin-top:8px; opacity:0.9;">جاري فتح واتساب لتأكيد طلبك مباشرة مع فريق العمل... 📲</div>' : ''}
+        `;
+      }
+
+      submitBtn.style.opacity = '1';
+      submitBtn.innerHTML = isEn ? 'Request Submitted Successfully ✓' : 'تم تسجيل طلبك بنجاح ✓';
+
+      // تفريغ حقول الفورم
+      document.getElementById('fName').value = '';
+      document.getElementById('fPhone').value = '';
+      document.getElementById('fCompany').value = '';
+
+      // تحويل العميل لواتساب بعد مهلة بسيطة ليرى رسالة النجاح
+      if (BACKEND_CONFIG.ENABLE_WHATSAPP_REDIRECT) {
+        const waMsg = isEn
+          ? `Hello Waay, I'm ${name} from ${company} (${phone}). I have requested an exploratory awareness session for our team in (${sector}) with estimated team size (${count}).`
+          : `مرحباً وعي، أنا أ/ ${name} من شركة ${company} (${phone}). طلبت حجز جلسة استكشافية لفريقنا في مجال (${sector}) والعدد المتوقع (${count}).`;
+        const waText = encodeURIComponent(waMsg);
+        setTimeout(() => {
+          window.open(`https://wa.me/${BACKEND_CONFIG.WHATSAPP_NUMBER}?text=${waText}`, '_blank');
+        }, 1600);
+      }
+
+      // إعادة تفعيل الزر بعد 4 ثوانٍ
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }, 4000);
+    }
+
+    // ──────────────────────────────────────────
+    // 8. Initialization
+    // ──────────────────────────────────────────
+    const initLang = localStorage.getItem('waay_lang') || 'ar';
+    setLanguage(initLang);
+
+    // ──────────────────────────────────────────
+    // 9. Mobile Hamburger Menu Toggle
+    // ──────────────────────────────────────────
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuToggleBtn && navMenu) {
+      menuToggleBtn.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        menuToggleBtn.setAttribute('aria-expanded', isOpen);
+        menuToggleBtn.textContent = isOpen ? '✕' : '☰';
+      });
+
+      // Close menu when a nav link is clicked
+      navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          menuToggleBtn.setAttribute('aria-expanded', 'false');
+          menuToggleBtn.textContent = '☰';
+        });
+      });
+
+      // Close menu on outside click
+      document.addEventListener('click', (e) => {
+        if (!navMenu.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+          navMenu.classList.remove('open');
+          menuToggleBtn.setAttribute('aria-expanded', 'false');
+          menuToggleBtn.textContent = '☰';
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>معاينة شعار وعي المعتمد في السايت</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    padding: 30px 20px;
+    font-family: 'Tajawal', sans-serif;
+    background: #070e1b;
+    color: #e2e8f0;
+  }
+  .preview-section {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: #0f1c2e;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  h2 {
+    color: #00B4D8;
+    margin-top: 0;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .navbar-mock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background: rgba(19, 31, 48, 0.85);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    margin-top: 14px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .brand-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1.1;
+  }
+  .brand-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #00B4D8;
+    letter-spacing: 1.2px;
+    font-family: 'Inter', sans-serif;
+  }
+  .nav-dummy-links {
+    display: flex;
+    gap: 18px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+  }
+  .cta-btn {
+    background: linear-gradient(135deg, #00B4D8 0%, #0077B6 100%);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+  }
+  
+  /* Style A: Pure floating shield (no border container) */
+  .logo-floating {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.45));
+    transition: transform 0.25s ease, filter 0.25s ease;
+  }
+  .nav-brand:hover .logo-floating {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 16px rgba(0, 210, 255, 0.7));
+  }
+
+  /* Style B: Inside sleek cyber container */
+  .logo-boxed {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0B192C 0%, #0F2A4A 100%);
+    border: 1px solid rgba(0, 180, 216, 0.4);
+    box-shadow: 0 4px 14px rgba(0, 180, 216, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-boxed img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+
+  /* Style C: Full vertical lockup */
+  .logo-full-view {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+
+<div style="text-align: center; max-width: 800px; margin: 0 auto 30px auto;">
+  <h1 style="color: #fff; margin-bottom: 8px;">معاينة الشعار المعتمد في الهيدر والفوتر</h1>
+  <p style="color: #94a3b8; font-size: 0.95rem;">شعار «وعي» الرسمي من اختيارك بعد المعالجة الشفافة فائقة الوضوح</p>
+</div>
+
+<!-- Option 1: Floating Shield (Modern SaaS Standard) -->
+<div class="preview-section">
+  <h2><span>1️⃣</span> الستايل الأكثر فخامة وعصرية: الدرع الطافي بجانب النص العربي والإنجليزي</h2>
+  <div class="navbar-mock">
+    <a href="#" class="nav-brand">
+      <img src="logo-emblem.png" alt="شعار وعي" class="logo-floating">
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span class="brand-name">وعـي</span>
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981; display: inline-block;"></span>
+        </div>
+        <span class="brand-tag">WAAY CYBERSECURITY</span>
+      </div>
+    </a>
+    <div class="nav-dummy-links">
+      <span>المحاكاة</span>
+      <span>المنهجية</span>
+      <span>تقرير الإدارة</span>
+      <span>الأسعار</span>
+    </div>
+    <a href="#" class="cta-btn">احجز جلسة تجريبية</a>
+  </div>
+</div>
+
+<!-- Option 2: Boxed Container -->
+<div class="preview-section">
+  <h2><span>2️⃣</span> الشعار داخل الإطار السيبراني الزجاجي المربع</h2>
+  <div class="navbar-mock">
+    <a href="#" class="nav-brand">
+      <div class="logo-boxed">
+        <img src="logo-emblem.png" alt="شعار وعي">
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span class="brand-name">وعـي</span>
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #10B981; box-shadow: 0 0 8px #10B981; display: inline-block;"></span>
+        </div>
+        <span class="brand-tag">WAAY CYBERSECURITY</span>
+      </div>
+    </a>
+    <div class="nav-dummy-links">
+      <span>المحاكاة</span>
+      <span>المنهجية</span>
+      <span>تقرير الإدارة</span>
+      <span>الأسعار</span>
+    </div>
+    <a href="#" class="cta-btn">احجز جلسة تجريبية</a>
+  </div>
+</div>
+
+<!-- Option 3: Full Vertical Lockup in Footer -->
+<div class="preview-section">
+  <h2><span>3️⃣</span> تطبيق الشعار الكامل في الفوتر (Footer)</h2>
+  <div style="background: rgba(11, 25, 44, 0.7); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 24px;">
+    <img src="logo-emblem.png" alt="وعي" style="width: 60px; height: 60px; object-fit: contain; filter: drop-shadow(0 0 16px rgba(0, 210, 255, 0.45));">
+    <div>
+      <div style="font-size: 1.8rem; font-weight: 900; color: #fff;">وعـي</div>
+      <div style="font-size: 0.8rem; font-weight: 800; color: #00B4D8; letter-spacing: 2px;">WAAY CYBERSECURITY</div>
+      <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 4px;">Human Layer Security • خط الدفاع البشري الأول</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

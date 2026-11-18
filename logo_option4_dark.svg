@@ -1,0 +1,50 @@
+<svg width="480" height="150" viewBox="0 0 480 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shield-grad-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#0088FF" />
+    </linearGradient>
+    <linearGradient id="shackle-grad-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+    <linearGradient id="glow-node-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#00E5FF" />
+    </linearGradient>
+    <filter id="glow-filter-dark" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background container for dark preview -->
+  <rect width="480" height="150" rx="16" fill="#0B132B" />
+
+  <!-- Group Icon (SafeLock Shield) -->
+  <g transform="translate(25, 15)">
+    <!-- Lock Shackle -->
+    <path d="M40 50 V34 C40 20.7 50.7 10 64 10 C77.3 10 88 20.7 88 34 V50" 
+          stroke="url(#shackle-grad-dark)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Shield Outer Shell -->
+    <path d="M22 48 H106 V78 C106 100 64 122 64 122 C64 122 22 100 22 78 V48 Z" 
+          fill="#060C1B" stroke="url(#shield-grad-dark)" stroke-width="8" stroke-linejoin="round" />
+
+    <!-- Shield Inner Fill Accent -->
+    <path d="M32 56 H96 V77 C96 93 64 110 64 110 C64 110 32 93 32 77 V56 Z" 
+          fill="url(#shield-grad-dark)" fill-opacity="0.16" />
+
+    <!-- Cyber Keyhole & Security Node -->
+    <circle cx="64" cy="74" r="8.5" fill="url(#glow-node-dark)" filter="url(#glow-filter-dark)" />
+    <path d="M64 80 V92" stroke="url(#glow-node-dark)" stroke-width="6" stroke-linecap="round" />
+  </g>
+
+  <!-- Typography Brand Arabic -->
+  <text x="170" y="82" fill="#FFFFFF" font-family="'Tajawal', -apple-system, sans-serif" font-weight="900" font-size="64" letter-spacing="-1">وعـي</text>
+
+  <!-- Typography Brand English & Tagline -->
+  <text x="173" y="110" fill="#38BDF8" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="15" letter-spacing="4">WAAY CYBERSECURITY</text>
+  <text x="175" y="128" fill="#94A3B8" font-family="'Tajawal', -apple-system, sans-serif" font-weight="600" font-size="12" letter-spacing="0.5">خط الدفاع البشري الأول للشركات المصرية</text>
+</svg>
+
